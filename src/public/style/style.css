@@ -1,16 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Grande', sans-serif;
+    box-sizing: border-box;
+}
 body {
-    padding: 100px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    height: 100vh;
     display: flex;
     justify-content: center;
-    margin: 0;
-  }
-  
-h2 {
+    align-items: center;
+    min-height: 100vh;
+    background: url(../images/fondoDePantalla1.png);
+    background-size: cover;
+    background-position: center;
+
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    /*background: #339CFF; /* comentar si se quiere quitar fondo del header*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.logo {
+    font-size: 2em;
+    color: white;
+    user-select: none;
+}
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    background: transparent;
+}
+
+.navigation .botonLogin {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation .botonLogin:hover { /*hover es para pasar por encima */
+    background: black;
+    color: white;
+}
+.navigation .boton:hover { /*hover es para pasar por encima */
+    background: black;
+    color: white;
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px); /* difumina fondo*/
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+.form-box h2 {
+    font-size: 2em;
+    color: black;
     text-align: center;
 }
 
-button {
-    margin: 10px;
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #CBD8E6;
+    font-weight: 500;
+    pointer-events: none;
+} 
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.remember-forgot {
+    font-size: .9em;
+    color: black;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: black;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: black;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.boton {
+    width: 100%;
+    height: 45px;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+}
+
+.login-register {
+    font-size: .9em;
+    color: black;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+.contenedor {
+    position: relative;
+    width: 1000px;
+    height: 440px;
+    /* background: transparent; */
+    border: 2px solid rgba(255,255,255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px); /* difumina fondo*/
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto .grupo{
+    display: flex;
+    align-items: center;
+}
+.texto h2 {
+    font-size: 2em;
+    color: black;
+    text-align: center;
+}
+
+.texto .grupo div {
+    text-align: center;
+    flex: 1;
+    padding: 10px;
+    align-items: center;
+}
+
+.texto button {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.texto button:hover { /*hover es para pasar por encima */
+    background: black;
+    color: white;
 }
