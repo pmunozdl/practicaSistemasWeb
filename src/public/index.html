@@ -6,16 +6,15 @@
     <title>Portada</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style/style.css'>
-    <script src='main.js'></script>
 </head>
 <body>
     <header>
         <h2 class="logo">Sbank</h2>
         <nav class="navigation">
-            <a href='#' class="boton">Inicio</a>
-            <a href='#' class="boton">Sobre Nosotros</a>
-            <button class="botonLogin"> Iniciar Sesión</button>
-            <button class="botonLogin"> Registro</button>
+            <a href='index.html' class="boton" id="Portada">Inicio</a>
+            <a href='sobreNosotros.html' class="boton" id="botonSobreNosotros">Sobre Nosotros</a>
+            <a href="login.html"><button class="botonLogin" id = "botonLogin"> Iniciar Sesión</button></a>
+            <a href="registro.html"><button class="botonLogin" id="botonRegistro"> Registro</button></a>
         </nav>
     </header>
     <div class = "contenedor">
@@ -28,17 +27,18 @@
             <p> Regístrese y descubra todos nuestros beneficios. </p>
             <div class="grupo">
                 <div>
-                        <button id="botonAcerca">Acerca de nosotros</button>
+                        <a href="sobreNosotros.html"><button id="botonAcerca">Acerca de nosotros</button> </a>
                 </div>
                 <div>
                     <img src="images/fotoPortada.png" alt="" width="300px" height="auto">
                 </div>
                 <div id="portadaLogin">
-                        <button id="botonLogin">Iniciar sesión</button>
-                        <button id="botonRegistro">Registro</button>
+                        <a href="login.html"><button id="botonLogin">Iniciar sesión</button></a>
+                        <a href="registro.html"><button id="botonRegistro">Registro</button></a>
                 </div> 
             </div>
         </div>
     </div>
+    <script src='javascript/index.js'></script>
 </body>
 </html>

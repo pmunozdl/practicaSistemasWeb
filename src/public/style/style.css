@@ -31,7 +31,7 @@ header {
     color: white;
     user-select: none;
 }
-.navigation a {
+.navigation .boton {
     position: relative;
     font-size: 1.1em;
     color: white;
@@ -67,7 +67,7 @@ header {
 .wrapper {
     position: relative;
     width: 400px;
-    height: 440px;
+    height: 470px;
     background: transparent;
     border: 2px solid rgba(255,255,255, .5);
     border-radius: 20px;
@@ -78,10 +78,14 @@ header {
     align-items: center;
 }
 
+.wrapper.active {
+    height: 520px;
+}
 .wrapper .form-box {
     width: 100%;
     padding: 40px;
 }
+
 .form-box h2 {
     font-size: 2em;
     color: black;
@@ -108,7 +112,7 @@ header {
 } 
 .input-box input:focus~label,
 .input-box input:valid~label {
-    top: -5px;
+    top: -10px;
 }
 .input-box input {
     width: 100%;

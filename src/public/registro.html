@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Inicio Sesión</title>
+    <title>Registro</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style/style.css'>
 </head>
@@ -13,12 +13,13 @@
         <nav class="navigation">
             <a href='index.html' class="boton">Inicio</a>
             <a href='sobreNosotros.html' class="boton">Sobre Nosotros</a>
-            <a href="registro.html"> <button class="botonLogin"> Registro</button></a>
+            <a href="inicioInvitado.html" class = 'boton'> Invitado</a>
+            <a href="login.html"> <button class="botonLogin"> Login</button></a>
         </nav>
     </header>
     <div class="wrapper">
     <div class="form-box login">
-        <h2>Login</h2>
+        <h2>Registro</h2>
         <form action="#">
             <div class="input-box">
                 <span class="icon"></span>
@@ -27,19 +28,23 @@
             </div>
             <div class="input-box">
                 <span class="icon"></span>
+                <input type="text" id = "email" required/>
+                <label>Email</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"></span>
+                <input type="text" id = "Dni" required/>
+                <label>Dni</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"></span>
                 <input type="password" id = "contraseña" required/>
                 <label>Contraseña</label>
             </div>
             <div class = "remember-forgot">
-                <label> <input type="checkbox">
-                Recordarme</label>
-                <a href="#">Olvidaste tu Contraseña?</a>
+                <a href="#">¿Tienes ya una cuenta? Inicia sesión</a>
             </div>
-            <button type="submit" class="boton"> Iniciar sesión </button>
-            <div class="login-register">
-                <p> ¿Todavía no tienes cuenta? </p>
-                <a href="registro.html" class="register-link"> Regístrate ahora! </a>
-            </div>
+            <button type="submit" class="boton"> Registrarme </button>
         </form>
     </div>
     <script src='javascript/login.js'></script>
