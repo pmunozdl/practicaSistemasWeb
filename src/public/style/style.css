@@ -4,15 +4,16 @@
     font-family: 'Lucida Grande', sans-serif;
     box-sizing: border-box;
 }
-body {
+body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(../images/fondoDePantalla1.png);
     background-size: cover;
     background-position: center;
-
+}
+body.fondoInicial {
+    background: url(../images/fondoDePantalla1.png);
 }
 header {
     position: fixed;
@@ -67,7 +68,7 @@ header {
 .wrapper {
     position: relative;
     width: 400px;
-    height: 470px;
+    height: 480px;
     background: transparent;
     border: 2px solid rgba(255,255,255, .5);
     border-radius: 20px;
@@ -178,7 +179,7 @@ header {
 
 .contenedor {
     position: relative;
-    width: 1000px;
+    max-width: 1000px;
     height: 440px;
     /* background: transparent; */
     border: 2px solid rgba(255,255,255, .5);
@@ -223,5 +224,106 @@ header {
 
 .texto button:hover { /*hover es para pasar por encima */
     background: black;
+    color: white;
+}
+
+p b {
+    color: white;
+}
+  
+.carrusel {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+  
+.carrusel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    /* max-width: 1030px; */
+    max-width: 510px;
+    scroll-behavior: smooth;
+}
+  
+.carrusel-fotos {
+    display: flex;
+    gap: 10px;
+    overflow: auto;
+  }
+  
+.carrusel-fotos img {
+    background: black;
+    border: 4px solid black;
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
+}
+  
+.carrusel-menu {
+    display: none;
+}
+  
+@media screen and (min-width: 500px) {
+.carrusel-fotos {
+    overflow: hidden;
+    }
+  
+.carrusel-fotos img {
+      width: 500px;
+      height: 400px;
+    }
+.carrusel-menu {
+      display: block;
+    }
+.carrusel-menu img {
+      box-sizing: border-box;
+      width: 50px;
+      height: 40px;
+      border: 10px solid black;
+    }
+.carrusel-menu img:hover {
+        border: none;
+    }
+}
+  
+p {
+    text-align: center;
+}
+.contenedor div p {
+    font-family: 'Lucida Sans', 'sans-serif';
+    color: black;
+    font-size: 1.1em;
+}
+.contenedor .carrusel {
+    display: flex;
+}
+
+.contenedor .carrusel .carrusel-fotos p {
+    color: white;
+    font-size: 18px;
+}
+
+#beneficioRegistro .boton {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    /* font-weight: 500; */
+    padding: 10px;
+}
+
+#beneficioRegistro .boton:hover { /*hover es para pasar por encima */
+    background: black;
+    color: white;
+}
+
+#beneficioRegistro h1 {
+    text-align: center;
     color: white;
 }
