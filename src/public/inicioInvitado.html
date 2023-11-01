@@ -5,10 +5,92 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Inicio invitado</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='style/style.css'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
-    <h1>Invitado </h1>
+<body id="inicioUsuario">
+    <header class="headerSidebar">
+        <nav class="navigation">
+            <a href='index.html' class="boton" id="Portada">Inicio</a>
+            <a href='sobreNosotros.html' class="boton" id="botonSobreNosotros">Sobre Nosotros</a>
+            <a href="inicioInvitado.html"><button class="botonLogin" id="botonRegistro"> Invitado </button></a>
+            <a href="registro.html"><button class="botonLogin" id = "botonLogin"> Registro</button></a>
+        </nav>
+    </header>
+    <nav class="sidebar close"> 
+        <header>
+           <div class="image-text">
+                <span class="image">
+                    <img src="images/logo.png" alt="logo" />
+                </span>
+                <div class="text header-text">
+                    <span class="name"> Bienvenido</span>
+                    <span class="profession">Usuario invitado</span>
+                    
+                </div>
+           </div> 
+           <i class='bx bx-chevron-right toggle'></i>
+           
+        </header>
+        <div class="menu-bar"> 
+            <div class="menu">
+                <li class="search-box">
+                    <i class="bx bx-search icon"></i>
+                    <input type="search" placeholder="Search...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="beneficiosRegistro.html">
+                            <i class='bx bxs-check-square'></i>
+                            <span class="text nav-text">Beneficios</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-credit-card'></i>
+                            <span class="text nav-text"> Conversor</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="registro.html">
+                            <i class='bx bx-log-in'></i>
+                            <span class="text nav-text"> Registro</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class="bx bx-log-out"></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </nav>
+    <div class = "contenidoInicioUsuario">
+        <div class="wrapper">
+            <div class="texto">
+                <h2 style="color: white;">Bienvenido</h2>
+                <br><br>
+                <p> Estamos encantados de recibir su visita. Usted ha accedido 
+                    a la versión de usuario invitado. En esta interfaz, 
+                    únicamente tendrá acceso a una versión limitada de 
+                    la aplicación.  <br>Si quiere conocer más, haga click 
+                    en el siguiente botón</p>
+                <br><br><br>
+                <a href='beneficiosRegistro.html' class="boton">Quiero saber más</a>
+            </div>
+        </div>
+        
+        <div class="accedeAlConversor">
+            <img src="images/graficoMonedas.png">
+            <p> Accede al conversor</p><br><br>
+            <a href='#' class="boton"> Conversor</a>
+
+        </div>
+    </div>
+    <script src='javascript/scripts.js'></script>
 </body>
 </html>

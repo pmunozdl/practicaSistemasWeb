@@ -21,7 +21,6 @@ header {
     left: 0;
     width: 100%;
     padding: 20px;
-    /*background: #339CFF; /* comentar si se quiere quitar fondo del header*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -74,7 +73,7 @@ header {
     border-radius: 20px;
     backdrop-filter: blur(20px); /* difumina fondo*/
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
 }
@@ -326,4 +325,255 @@ p {
 #beneficioRegistro h1 {
     text-align: center;
     color: white;
+}
+
+.contenidoInicioUsuario {
+    display: flex;
+    width: 80%;
+    right: -10%;
+    top: 0%;
+    height: 500px;
+    justify-content: right;
+    align-items: center;
+}
+
+.contenidoInicioUsuario .wrapper {
+    text-align: center;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    right: 10%;
+} 
+.contenidoInicioUsuario .boton {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    padding: 10px;
+    text-decoration: none;
+}
+.contenidoInicioUsuario .boton:hover { /*hover es para pasar por encima */
+    background: black;
+    color: white;
+}
+
+.contenidoInicioUsuario .wrapper .texto {
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.contenidoInicioUsuario .wrapper .texto p{
+    margin-top: 40px;
+}
+
+.contenidoInicioUsuario .accedeAlConversor { 
+    justify-content: center;
+    align-items: center;
+    display: block;
+    color: white;
+    width: 500px;
+    text-align: center;
+    top: 0%;
+    height: 400px;
+}
+.contenidoInicioUsuario .accedeAlConversor img {
+    width: 500px;
+    height: 200px;
+    margin-bottom: 40px;
+}
+
+.contenidoInicioUsuario .accedeAlConversor a{
+    background: transparent;
+    color: white;
+}
+
+#inicioUsuario {
+    background: url(../images/fondoDePantalla1.png);
+}
+/* dashboards */
+
+.dashboard {
+    font-family: 'Lucida Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --body-color: #EAE9F7;
+    --sidebar-color: #fff;
+    --primary-color: #695CFE;
+    --primary-color-light: #DDD;
+    --text-color: #707070;
+
+    --tran-02: all 0.2s;
+    --tran-03: all 0.3s;
+    --tran-04: all 0.4s;
+    --tran-05: all 0.5s;
+    
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background: var(--sidebar-color); /* cambia el fondo del sidebar */
+    transition: var(--tran-05);
+}
+
+.sidebar.close {
+    width: 88px;
+}
+.sidebar.close i {
+    font-size: 35px;
+}
+.sidebar.close .text{
+    opacity: 0;
+}
+body #inicioUsuario {
+    height: 100vh;
+    background: var(--body-color);
+}
+
+.sidebar .text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color)
+}
+
+.sidebar .image {
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar li {
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.sidebar li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: var(--tran-04);
+}
+
+.sidebar li a:hover {
+    background: var(--primary-color);
+}
+.sidebar li .icon {
+    /* min-width: 20px; */
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+    color: var(--text-color);
+    transition: var(--tran-02);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: var(--sidebar-color);
+}
+
+.sidebar .image-text img {
+    width: 50px;
+    border-radius: 6px;
+    padding: 10px 14 px;
+}
+
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar header .image-text .header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-text .name {
+    font-weight: 600;
+}
+
+.header-text .profession {
+    margin-top: -2px;
+}
+.sidebar .search-box {
+    background: var(--primary-color-light) ;
+}
+.search-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    /* background: var(--primary-color); */
+}
+.sidebar header .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25%;
+    transform: translateY(-50%);
+    height: 25px;
+    width: 25px;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--sidebar-color);
+    font-size: 22px;
+    z-index: 99; 
+}
+
+.sidebar .menu-bar {
+    height: calc(100% -50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.headerSidebar{
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 40%;
+    width: 60%;
+    padding: 20px;
+    display: inline;
+    justify-content: right;
+    padding-right: 20px;
+    /* align-items: center; */
+    /* z-index: 99;  */
+}
+
+.headerSidebar nav{
+    float: right;
+}
+
+.headerSidebar .close {
+    width: 95%;
 }
