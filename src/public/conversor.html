@@ -3,17 +3,18 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Inicio invitado</title>
+    <title>Conversor</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style/style.css'>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src='javascript/scripts.js' defer></script>
+
 </head>
-<body id="inicioUsuario">
+<body id="conversor">
     <header class="headerSidebar">
         <nav class="navigation">
-            <a href='beneficiosRegistro.html' class="boton" id="Portada">Beneficios</a>
-            <a href='conversor.html' class="boton" id="botonSobreNosotros">Conversor</a>
+            <a href='inicioInvitado.html' class="boton" id="Portada">Invitado</a>
+            <a href='beneficiosRegistro.html' class="boton" id="botonSobreNosotros">Beneficios</a>
             <a href="index.html"><button class="botonLogin" id="botonRegistro"> Inicio </button></a>
             <a href="registro.html"><button class="botonLogin" id = "botonLogin"> Registro</button></a>
         </nav>
@@ -47,7 +48,7 @@
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="conversor.html">
+                        <a href="#">
                             <i class='bx bx-credit-card'></i>
                             <span class="text nav-text"> Conversor</span>
                         </a>
@@ -62,7 +63,7 @@
             </div>
             <div class="bottom-content">
                 <li class="">
-                    <a href="index.html">
+                    <a href="#">
                         <i class="bx bx-log-out"></i>
                         <span class="text nav-text">Logout</span>
                     </a>
@@ -70,27 +71,33 @@
             </div>
         </div>
     </nav>
-    <div class = "contenidoInicioUsuario">
-        <div class="wrapper" id="inicioInvitado">
-            <div class="texto">
-                <h2 style="color: white;">Bienvenido</h2>
-                <br><br>
-                <p> Estamos encantados de recibir su visita. Usted ha accedido 
-                    a la versión de usuario invitado. En esta interfaz, 
-                    únicamente tendrá acceso a una versión limitada de 
-                    la aplicación.  <br>Si quiere conocer más, haga click 
-                    en el siguiente botón</p>
-                <br><br><br>
-                <a href='beneficiosRegistro.html' class="boton">Quiero saber más</a>
+    <div class = "contenidoConversor">
+        <header> Conversor de divisas </header>
+        <form action="#">
+            <div class="amount">
+                <p>Introduce cantidad</p>
+                <input type="text" value="1"/>
             </div>
-        </div>
-        
-        <div class="accedeAlConversor">
-            <img src="images/graficoMonedas.png">
-            <p> Accede al conversor</p><br><br>
-            <a href='conversor.html' class="boton"> Conversor</a>
-
-        </div>
+            <div class="drop-list">
+                <div class="from">
+                    <p>De:</p>
+                    <div class="select-box">
+                        <img src="https://flagcdn.com/48x36/us.png" alt="flag">
+                        <select></select>
+                    </div>
+                </div>
+                <div class="icon"> <i class="fas fa-exchange-alt"></i></div>
+                <div class="to">
+                    <p>A:</p>
+                    <div class="select-box">
+                        <img src="https://flagcdn.com/48x36/es.png" alt="flag">
+                        <select></select>
+                    </div>
+                </div>
+            </div>
+            <div class="exchange-rate">Obten el resultado</div>
+            <button type="submit">Convertir</button>
+        </form>
     </div>
 </body>
 </html>

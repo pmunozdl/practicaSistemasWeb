@@ -8,5 +8,4 @@ const body = document.querySelector("body"),
 
         toggle.addEventListener("click", () =>{
             sidebar.classList.toggle("close");
-            header.classList.toggle("close");
         });
