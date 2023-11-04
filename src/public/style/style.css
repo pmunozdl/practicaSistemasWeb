@@ -723,20 +723,26 @@ body #inicioUsuario {
     justify-content: center;
     padding: 10px;
 }
-#inicioUsuarioRegistrado .saldo p{
+/* #inicioUsuarioRegistrado .saldo p{
     padding: 10px;
-}
+} */
 #inicioUsuarioRegistrado .saldo .cifra {
     background: white;
     color: black;
     font-size: 2em;
     align-items: center;
     text-align: center;
-    justify-content: center;
-    height: 50%;
+    justify-content: right;
+    height: 60%;
 }
 
-#inicioUsuarioRegistrado .saldo .cifra .boton{
+#inicioUsuarioRegistrado .saldo .cifra .acciones2{
+    justify-content: right;
+    text-align: right;
+    display: block;
+}
+
+#inicioUsuarioRegistrado .saldo .cifra .acciones2 .boton{
     width: 10%;
     height: 45px;
     background: black;
@@ -747,8 +753,18 @@ body #inicioUsuario {
     font-size: 1em;
     color: white;
     font-weight: 500;
+    text-align: right;
+}
+#inicioUsuarioRegistrado .saldo .cifra a{
+    display: inline;
+    top: 0%;
+    /* background: red; */
+    height: 50%;
 }
 
+#inicioUsuarioRegistrado .saldo .cifra p{
+   justify-content: center;
+}
 #inicioUsuarioRegistrado .saldo .cifra .boton:hover{
     background: grey;
     color: black;
@@ -775,3 +791,5 @@ body #inicioUsuario {
 #inicioUsuarioRegistrado .ultimosMovimientos p {
     padding: 10px;
 }
+
+/* envia dinero */
