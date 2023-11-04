@@ -712,11 +712,11 @@ body #inicioUsuario {
 }
 
 #inicioUsuarioRegistrado .acciones {
-    height: 33%;
+    height: 25%;
 }
 
 #inicioUsuarioRegistrado .saldo {
-    height: 20%;
+    height: 33%;
     color: white;
     text-align: center;
     align-items: center;
@@ -726,7 +726,7 @@ body #inicioUsuario {
 #inicioUsuarioRegistrado .saldo p{
     padding: 10px;
 }
-#inicioUsuarioRegistrado .saldo div {
+#inicioUsuarioRegistrado .saldo .cifra {
     background: white;
     color: black;
     font-size: 2em;
@@ -736,13 +736,30 @@ body #inicioUsuario {
     height: 50%;
 }
 
+#inicioUsuarioRegistrado .saldo .cifra .boton{
+    width: 10%;
+    height: 45px;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+}
+
+#inicioUsuarioRegistrado .saldo .cifra .boton:hover{
+    background: grey;
+    color: black;
+}
 #inicioUsuarioRegistrado .ultimosMovimientos {
-    height: 47%;
+    height: 41%;
     color: white;
     text-align: center;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 #inicioUsuarioRegistrado .ultimosMovimientos div {
@@ -752,5 +769,9 @@ body #inicioUsuario {
     align-items: center;
     text-align: center;
     justify-content: center;
-    height: 100%;
+    height: 90%;
+}
+
+#inicioUsuarioRegistrado .ultimosMovimientos p {
+    padding: 10px;
 }
