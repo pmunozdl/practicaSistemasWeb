@@ -693,6 +693,8 @@ body #inicioUsuario {
 
 
 /*Usuario registrado*/
+
+
 /* .contenidoInicioUsuario {
     display: flex;
     width: 100%;
@@ -700,11 +702,8 @@ body #inicioUsuario {
 } */
 #inicioUsuarioRegistrado {
     width: 100%;
-    height: 95%;
+    height: 100%;
     position: relative;
-    justify-content: left;
-    /* text-align: center; */
-    /* align-items: center; */
     display: block;
     margin: 5% 0% 0% 30%; /*top, right, bottom */
     color: white;
@@ -865,4 +864,40 @@ body #inicioUsuario {
 #inicioEnviaDinero .caracteristicas .seleccionaOperacion .boton:hover{
     background: white;
     color: black;
+}
+
+/* Bizum */
+
+#inicioBizum {
+    width: 100%;
+    height: 95%;
+    position: relative;
+    align-items: center;
+    display: block;
+    margin: 5% 0% 0% 30%; /*top, right, bottom */
+    color: white;
+    justify-content: center;
+    text-align: center;
+}
+
+#inicioBizum .bizum {
+    width: 500px;
+    text-align: center;
+    justify-content: center;
+    /* background: red; */
+    align-items: center;
+    margin-left: 20%;
+}
+
+#inicioBizum .bizum h2 {
+    color: white;
+}
+
+#inicioBizum .bizum h2 {
+    color: black;
+}
+
+#inicioBizum .bizum .envioBizum .saldoRestante {
+    padding: 20px;
+    font-size: 1.5em;
 }
