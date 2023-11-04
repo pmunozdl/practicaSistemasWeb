@@ -793,3 +793,76 @@ body #inicioUsuario {
 }
 
 /* envia dinero */
+
+.contenidoEnviaDinero {
+    width: 1000px;
+    height: 700px;
+    margin-right: -10%;
+    margin-top: 10%;
+}
+#inicioEnviaDinero {
+    width: 100%;
+    height: 95%;
+    position: relative;
+    justify-content: left;
+    /* text-align: center; */
+    /* align-items: center; */
+    display: block;
+    color: white;
+    margin-right: 10%;
+    justify-content: center;
+}
+#inicioEnviaDinero .caracteristicas h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 10%;
+}
+#inicioEnviaDinero .caracteristicas .caracteristicasEnviaDinero {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 50px;
+    margin-right: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+#inicioEnviaDinero .caracteristicas .caracteristicasEnviaDinero .caracteristicasBizum{
+    margin-right: 100px;
+}
+
+#inicioEnviaDinero .caracteristicas .caracteristicasEnviaDinero .caracteristicasTransferencia{
+    margin-left: 100px;
+}
+
+#inicioEnviaDinero .caracteristicas .elegirOperacion{
+    font-size: 1.5em;
+}
+
+#inicioEnviaDinero .caracteristicas .seleccionaOperacion{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#inicioEnviaDinero .caracteristicas .seleccionaOperacion .boton{
+    /* display: flex; */
+    width: 300px;
+    height: 100px;
+    background: black;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    justify-content: left;
+    align-items: center;
+    padding: 20px;
+}
+
+#inicioEnviaDinero .caracteristicas .seleccionaOperacion .boton:hover{
+    background: white;
+    color: black;
+}
