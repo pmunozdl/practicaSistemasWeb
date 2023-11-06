@@ -790,6 +790,70 @@ body #inicioUsuario {
 #inicioUsuarioRegistrado .ultimosMovimientos p {
     padding: 10px;
 }
+.sidebarDerecha{
+    width: 25%;
+    height: 90%;
+    margin-right: -12%;
+    padding: 2rem 1rem;
+    background: #fff;
+    margin-left: 2%;
+  }
+  .sidebarDerecha h4{
+    margin-bottom: 1.5rem;
+  }
+  .sidebarDerecha .titulo {
+    background: black;
+    color: white;
+    width:100%;
+    text-align: center;
+    margin-top: 0%;
+  }
+  .sidebarDerecha .balance{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .balance .icon{
+    color: #fff;
+    font-size: 20px;
+    border-radius: 6px;
+    margin-right: 1rem;
+    padding: 1rem;
+    background: rgb(37, 37, 37);
+  }
+  .balance .info h5{
+    font-size: 16px;
+  }
+  .balance .info span{
+    font-size: 16px;
+    color: rgb(100, 100, 100);
+  }
+
+ #dolar {
+    margin-right: 2px;
+    font-size: 40px;
+    margin-left: -5%;
+  }
+  #inr {
+    margin-right: 2px;
+    font-size: 40px;
+    margin-left: -5%;
+}
+#euro {
+    margin-right: 2px;
+    font-size: 40px;
+    margin-left: -5%;
+  }
+  #yenes {
+    margin-right: 2px;
+    font-size: 40px;
+    margin-left: -5%;
+  }
+  #pound {
+    margin-right: 2px;
+    font-size: 40px;
+    margin-left: -5%;
+  }
 
 /* envia dinero */
 
