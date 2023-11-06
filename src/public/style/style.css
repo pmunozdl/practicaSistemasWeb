@@ -77,7 +77,19 @@ header {
     justify-content: center;
     align-items: center;
 }
-
+#registro {
+    position: relative;
+    width: 400px;
+    height: 510px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px); /* difumina fondo*/
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
 .wrapper.active {
     height: 520px;
 }
@@ -859,9 +871,9 @@ body #inicioUsuario {
 
 .contenidoEnviaDinero {
     width: 1000px;
-    height: 700px;
+    height: 650px;
     margin-right: -10%;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 #inicioEnviaDinero {
     width: 100%;
@@ -938,7 +950,7 @@ body #inicioUsuario {
     position: relative;
     align-items: center;
     display: block;
-    margin: 5% 0% 0% 30%; /*top, right, bottom */
+    margin: 5% 0% 0% 35%; /*top, right, bottom */
     color: white;
     justify-content: center;
     text-align: center;
@@ -991,3 +1003,6 @@ body #inicioUsuario {
     margin-right: -10%;
     text-align: center;
 }
+
+/*interfaz admin */
+
