@@ -901,3 +901,29 @@ body #inicioUsuario {
     padding: 20px;
     font-size: 1.5em;
 }
+
+/* cambia tu saldo */
+#cambiaSaldo {
+    background: url(../images/fondoDePantalla1.png);
+    justify-content: center;
+    /* display: inline-block; */
+} 
+
+#cambiaSaldo .contenidoConversor {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 20%;
+    margin-right: 0%;
+    justify-content: center;
+    /* width: 1000px; */
+}
+
+#cambiaSaldo .tuSaldo {
+    margin-left: 10%;
+    background: white;
+    border-color: black;
+    width: 250px;
+    border-radius: 2em;
+    margin-right: -10%;
+    text-align: center;
+}
