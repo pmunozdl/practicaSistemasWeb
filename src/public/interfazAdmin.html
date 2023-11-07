@@ -1,0 +1,377 @@
+<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Interfaz administrador</title>
+      <link rel="stylesheet" href="style/style.css" />
+      <!-- Font Awesome Cdn Link -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    </head>
+    <body class="bodyAdmin">
+      <header class="headerAdmin">
+        <div class="logoAdmin">
+          <a href="#">SBank</a>
+          <div class="search_box">
+            <input type="text" placeholder="Search">
+            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+    
+        <div class="header-icons">
+          <i class="fas fa-bell"></i>
+          <div class="account">
+            <img src="../public/images/logo.png" alt="">
+            <h4>Administrador</h4>
+          </div>
+        </div>
+      </header>
+      <div class="containerAdmin">
+        <nav class="navAdmin">
+          <div class="side_navbar">
+            <span>Main Menu</span>
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">Panel de usuarios</a>
+            <a href="#">Validar Transacciones</a>
+    
+            <div class="links">
+              <span>Quick Link</span>
+              <a href="#">LogOut</a>
+            </div>
+          </div>
+        </nav>
+    
+        <div class="main-body">
+          <h2>Dashboard</h2>
+          <div class="promo_card">
+            <h1>Welcome to EasyPay</h1>
+            <span>Gestiona la información de la aplicación</span>
+            <button>Learn More</button>
+          </div>
+    
+          <div class="history_lists">
+            <div class="list1">
+              <div class="row">
+                <h4>History</h4>
+                <a href="#">See all</a>
+              </div>
+              <table class="tableAdmin">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Dates</th>
+                    <th>Name</th>
+                    <th>Número</th>
+                    <th>Dni</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>2, Aug, 2022</td>
+                    <td>Sam Tonny</td>
+                    <td>625678901</td>
+                    <td>06712453F</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>29, July, 2022</td>
+                    <td>Code Info</td>
+                    <td>678905721</td>
+                    <td>12345678P</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>15, July, 2022</td>
+                    <td>Jhon David</td>
+                    <td>654321789</td>
+                    <td>09876543R</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>5, July, 2022</td>
+                    <td>Salina Gomiz</td>
+                    <td>654789012</td>
+                    <td>12346783R</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>29, June, 2022</td>
+                    <td>Gomiz</td>
+                    <td>654389012</td>
+                    <td>87634251P</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>28, June, 2022</td>
+                    <td>Elyana Jhon</td>
+                    <td>678942351</td>
+                    <td>78912345T</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+    
+            <div class="list2">
+              <div class="row">
+                <h4>Logs</h4>
+                <a href="#">Upload</a>
+              </div>
+              <table class="tableAdmin">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Tipo</th>
+                    <th>Remitente</th>
+                    <th>Destinatario</th>
+                    <th>Cantidad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Bizum</td>
+                    <td>689123455</td>
+                    <td>678901234</td>
+                    <td>20</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Transaccion</td>
+                    <td>621345677</td>
+                    <td>698321576</td>
+                    <td>65</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Transaccion</td>
+                    <td>652138934</td>
+                    <td>679312356</td>
+                    <td>50</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Bizum</td>
+                    <td>619834657</td>
+                    <td>650123456</td>
+                    <td>10</td>
+                  </tr> 
+                  <tr>
+                    <td>5</td>
+                    <td>Transaccion</td>
+                    <td>692173094</td>
+                    <td>620923458</td>
+                    <td>100</td>
+                  </tr> 
+                  <tr>
+                    <td>6</td>
+                    <td>Transaccion</td>
+                    <td>670129405</td>
+                    <td>645789012</td>
+                    <td>80</td>
+                  </tr> 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+    
+        <div class="sidebarDerecha">
+          <h4>Account Balance</h4>
+          
+          <div class="balance">
+            <i class="fas fa-dollar icon"></i>
+            <div class="info">
+              <h5>Dollar</h5>
+              <span><i class="fas fa-dollar"></i>25,000.00</span>
+            </div>
+          </div>
+          
+          <div class="balance">
+            <i class="fa-solid fa-rupee-sign icon"></i>
+            <div class="info">
+              <h5>PKR</h5>
+              <span><i class="fa-solid fa-rupee-sign"></i>300,000.00</span>
+            </div>
+          </div>
+    
+          <div class="balance">
+            <i class="fas fa-euro icon"></i>
+            <div class="info">
+              <h5>Euro</h5>
+              <span><i class="fas fa-euro"></i>25,000.00</span>
+            </div>
+          </div>
+    
+          <div class="balance">
+            <i class="fa-solid fa-indian-rupee-sign icon"></i>
+            <div class="info">
+              <h5>INR</h5>
+              <span><i class="fa-solid fa-indian-rupee-sign"></i>220,000.00</span>
+            </div>
+          </div>
+    
+          <div class="balance">
+            <i class="fa-solid fa-sterling-sign icon"></i>
+            <div class="info">
+              <h5>Pound</h5>
+              <span><i class="fa-solid fa-sterling-sign"></i>30,000.00</span>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </body>
+    </html>
+    </span>
+
+    <!-- <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Inicio usuario Registrado</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='style/style.css'>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <script src='javascript/scripts.js' defer></script>
+    </head>
+    <body id="inicioUsuario">
+        <header class="headerSidebar">
+            <nav class="navigation">
+                <a href='#' class="boton" id="Portada">EnviaDinero</a>
+                <a href='conversor.html' class="boton" id="botonSobreNosotros">Conversor</a>
+                <a href="registro.html"><button class="botonLogin" id = "botonLogin"> Registro</button></a>
+                <a href="index.html"><button class="botonLogin" id="botonRegistro"> Cerrar Sesión </button></a>
+            </nav>
+        </header>
+        <nav class="sidebar close"> 
+            <header>
+               <div class="image-text">
+                    <span class="image">
+                        <img src="images/logo.png" alt="logo" />
+                    </span>
+                    <div class="text header-text">
+                        <span class="name"> Bienvenido</span>
+                        <span class="profession">nombreUsuario</span>
+                        
+                    </div>
+               </div> 
+               <i class='bx bx-chevron-right toggle'></i>
+               
+            </header>
+            <div class="menu-bar"> 
+                <div class="menu">
+                    <li class="search-box">
+                        <i class="bx bx-search icon"></i>
+                        <input type="search" placeholder="Search...">
+                    </li>
+                    <ul class="menu-links">
+                        <li class="nav-link">
+                            <a href="conversor.html">
+                                <i class='bx bx-credit-card'></i>
+                                <span class="text nav-text"> Conversor</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bxs-check-square'></i>
+                                <span class="text nav-text">EnviaDinero</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="registro.html">
+                                <i class='bx bx-log-in'></i>
+                                <span class="text nav-text"> Registro</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom-content">
+                    <li class="">
+                        <a href="index.html">
+                            <i class="bx bx-log-out"></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </nav>
+        <div class = "contenidoInicioUsuario">
+            <!-- contiene todo -->
+            <!-- <div class="wrapper" id="inicioUsuarioRegistrado"> 
+                <div class="acciones">
+                   <p>"Bienvenido Nombre usuario a su panel de control"</p>
+                   <br>
+                   <p> Acciones:</p>
+                   <br><br>
+                   <a href="registro.html"><button class="boton"> Envía dinero</button></a>
+                   <a href="registro.html"><button class="boton"> Registro</button></a>
+                </div>
+                <div class="saldo">
+                    <br>
+                    <p>Tu saldo:</p>
+                    <div class = "cifra">
+                        <div class = "acciones2">
+                            <a href="registro.html"><button class="boton">+</button></a>
+                            <a href="registro.html"><button class="boton">-</button></a> 
+                            <p> 1 $</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ultimosMovimientos">
+                    <p>Aquí puede ver un resumen de sus últimos movimientos</p>
+                    <div>
+                        últimos movimientos
+                    </div>
+                </div>
+            </div>
+            <div class="sidebarDerecha">
+                <div class="titulo">
+                    <h4>Account Balance</h4>
+                </div>
+                <div class="balance">
+                  <!-- <i class="fas fa-dollar icon"></i> -->
+                  <!-- <i id="dolar" class='bx bx-dollar'></i>
+                  <div class="info">
+                    <h5>Dollar</h5>
+                    <span></i>25,000.00<i class='bx bx-dollar'></i></span>
+                  </div>
+                </div>
+                
+                <div class="balance">
+                <i id = "inr" class='bx bx-rupee' ></i>
+                  <div class="info">
+                    <h5>INR</h5>
+                    <span></i>300,000.00<i class='bx bx-rupee' ></i></span>
+                  </div>
+                </div>
+          
+                <div class="balance">
+                <i id = "euro" class='bx bx-euro' ></i></i>
+                  <div class="info">
+                    <h5>Euro</h5>
+                    <span></i>25,000.00<i class='bx bx-euro' ></i></span>
+                  </div>
+                </div>
+          
+                <div class="balance">
+                <i id="yenes"class='bx bx-yen'></i></i>
+                  <div class="info">
+                    <h5>JPY</h5>
+                    <span></i>220,000.00<i class='bx bx-yen'></i></span>
+                  </div>
+                </div>
+          
+                <div class="balance">
+                    <i id= "pound"class='bx bx-pound' ></i>
+                  <div class="info">
+                    <h5>Pound</h5>
+                    <span></i>30,000.00<i class='bx bx-pound'></i></span>
+                  </div>
+                </div>
+          
+              </div>
+            </div>
+        </div>
+    </body>
+    </html> -->
