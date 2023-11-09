@@ -6,6 +6,7 @@
     <title>Inicio Sesión</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style/style.css'>
+    <script src="../public/javascript/login.js" defer></script>
 </head>
 <body class="fondoInicial">
     <header>
@@ -19,7 +20,7 @@
     <div class="wrapper">
     <div class="form-box login">
         <h2>Login</h2>
-        <form action="#">
+        <form action="inicioUsuarioRegistrado.html">
             <div class="input-box">
                 <span class="icon"></span>
                 <input id="telefono" required/>
@@ -35,7 +36,7 @@
                 Recordarme</label>
                 <a href="#">Olvidaste tu Contraseña?</a>
             </div>
-            <button type="submit" class="boton"> Iniciar sesión </button>
+            <button type="submit" class="boton" onclick="redirigir()"> Iniciar sesión </button>
             <div class="login-register">
                 <p> ¿Todavía no tienes cuenta? </p>
                 <a href="registro.html" class="register-link"> Regístrate ahora! </a>
