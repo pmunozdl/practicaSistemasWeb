@@ -1,0 +1,100 @@
+<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Panel Control</title>
+      <link rel="stylesheet" href="style/style.css" />
+      <!-- Font Awesome Cdn Link -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+      <script src="../public/javascript/panelAdmin.js" defer></script>
+    </head>
+    <body class="bodyAdmin">
+      <header class="headerAdmin">
+        <div class="logoAdmin">
+          <a href="#">SBank</a>
+          <div class="search_box">
+            <input type="text" placeholder="Search">
+            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+    
+        <div class="header-icons">
+          <i class="fas fa-bell"></i>
+          <div class="account">
+            <img src="../public/images/logo.png" alt="">
+            <h4>Administrador</h4>
+          </div>
+        </div>
+      </header>
+      <div class="containerAdmin" id="containerAdminPanel">
+        <nav class="navAdmin">
+          <div class="side_navbar" id="side_navbarPanel">
+            <span>Main Menu</span>
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">InicioAdmin</a>
+            <a href="#">Validar Transacciones</a>
+    
+            <div class="links">
+              <span>Quick Link</span>
+              <a href="#">LogOut</a>
+            </div>
+          </div>
+        </nav>
+        <div class="main-body" id="mainBodyPanel">
+          <h2>Dashboard</h2>
+          <div class="promo_card">
+            <h1>UsuarioA</h1>
+            <span>Gestiona la información del usuario</span>
+            <button>Learn More</button>
+            <div id="botonPanel">
+              <button onclick="toggleDropdown('dropdown1')" class="dropbtn">Acciones</button>
+              <div id="dropdown1" class="dropdown-content">
+                <a href="#">Transacciones</a>
+                <a href="#">Logs</a>
+                <a href="#">Eliminar</a>
+              </div>
+            </div>
+          </div>
+          <div class="promo_card">
+            <h1>UsuarioB</h1>
+            <span>Gestiona la información del usuario</span>
+            <button>Learn More</button>
+            <div id="botonPanel">
+              <button onclick="toggleDropdown('dropdown2')" class="dropbtn">Acciones</button>
+              <div id="dropdown2" class="dropdown-content">
+                <a href="#">Transacciones</a>
+                <a href="#">Logs</a>
+                <a href="#">Eliminar</a>
+              </div>
+            </div>
+          </div>
+          <div class="promo_card">
+            <h1>UsuarioC</h1>
+            <span>Gestiona la información del usuario</span>
+            <button>Learn More</button>
+            <div id="botonPanel">
+              <button onclick="toggleDropdown('dropdown3')" class="dropbtn">Acciones</button>
+              <div id="dropdown3" class="dropdown-content">
+                <a href="#">Transacciones</a>
+                <a href="#">Logs</a>
+                <a href="#">Eliminar</a>
+              </div>
+            </div>
+          </div>
+          <div class="promo_card">
+            <h1>UsuarioD</h1>
+            <span>Gestiona la información del usuario</span>
+            <button>Learn More</button>
+            <div id="botonPanel">
+              <button onclick="toggleDropdown('dropdown4')" class="dropbtn">Acciones</button>
+              <div id="dropdown4" class="dropdown-content">
+                <a href="#">Transacciones</a>
+                <a href="#">Logs</a>
+                <a href="#">Eliminar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+    </html>
