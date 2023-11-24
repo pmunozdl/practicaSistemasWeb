@@ -1,0 +1,4 @@
+node_modules/
+**/.$entity*
+.vscode/
+.DS_Store
