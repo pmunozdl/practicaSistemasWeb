@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body, html{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', sans-serif;
+}
+.bodyAdmin{
+    background: #80BFFF;
+  }
+  .headerAdmin{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 20px;
+    background: #fff;
+  }
+  .logoAdmin{
+    display: flex;
+    align-items: center;
+
+  }
+  .logoAdmin a{
+    color: #000;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 2rem 8rem 2rem 2rem;
+    text-decoration: none;
+  }
+  .search_box{
+    display: flex;
+    align-items: center;
+  }
+  .search_box input{
+    padding: 9px;
+    width: 250px;
+    background: rgb(228, 228, 228);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .search_box i{
+    padding: 0.66rem;
+    cursor: pointer;
+    color: #fff;
+    background: #000;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .header-icons{
+    display: flex;
+    align-items: center;
+    margin-right: 1%;
+  }
+  .header-icons i{
+    margin-right: 2rem;
+    cursor: pointer;
+  }
+  .header-icons .account{
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-icons .account img{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  .containerAdmin{
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-between;
+    height: 90%;
+    width: 95%;
+  }
+  
+  /* Side menubar section */
+  .navAdmin{
+    background: #fff;
+  }
+  .side_navbar{
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+  }
+  .side_navbar span{
+    color: gray;
+    margin: 1rem 3rem;
+    font-size: 12px;
+  }
+  .side_navbar a{
+    width: 100%;
+    padding: 0.8rem 3rem;
+    font-weight: 500;
+    font-size: 15px;
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+  }
+  .links{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .links a{
+    font-size: 13px;
+  }
+  .side_navbar a:hover{
+    background: rgb(235, 235, 235);
+  }
+  .side_navbar .active{
+    border-left: 2px solid rgb(100, 100, 100);
+  }
+  
+  /* Main Body Section */
+  .main-body{
+    width: 90%;
+    padding: 1rem;
+
+  }
+  .promo_card{
+    width: 100%;
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 0.5rem 1rem 1rem 3rem;
+    background: rgb(37, 37, 37);
+  }
+  .promo_card h1, .promo_card span, button{
+    margin: 10px;
+  }
+  .promo_card button{
+    display: block;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .history_lists{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+  }
+  .tableAdmin{
+    background: #fff;
+    padding: 1rem;
+    text-align: left;
+    border-radius: 10px;
+  }
+  .tableAdmin td, th{
+    padding: 0.2rem 0.8rem;
+  }
+  .tableAdmin th{
+    font-size: 12px;
+  }
+  .tableAdmin td{
+    font-size: 13px;
+    color: rgb(100, 100, 100);
+  }
+  
+  /* Sidebar Section */
+  .sidebarDerecha{
+      width: 25%;
+      height: 100%;
+      margin-right: -12%;
+      padding: 2rem 1rem;
+      background: #fff;
+      margin-left: 2%;
+    }
+    .sidebarDerecha h4{
+      margin-bottom: 1.5rem;
+    }
+    .sidebarDerecha .titulo {
+      background: black;
+      color: white;
+      width:100%;
+      text-align: center;
+      margin-top: 0%;
+    }
+    .sidebarDerecha .balance{
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .balance .icon{
+      color: #fff;
+      font-size: 20px;
+      border-radius: 6px;
+      margin-right: 1rem;
+      padding: 1rem;
+      background: rgb(37, 37, 37);
+    }
+    .balance .info h5{
+      font-size: 16px;
+    }
+    .balance .info span{
+      font-size: 16px;
+      color: rgb(100, 100, 100);
+    }
+  
+   #dolar {
+      margin-right: 2px;
+      font-size: 40px;
+      margin-left: -5%;
+    }
+    #inr {
+      margin-right: 2px;
+      font-size: 40px;
+      margin-left: -5%;
+  }
+  #euro {
+      margin-right: 2px;
+      font-size: 40px;
+      margin-left: -5%;
+    }
+    #yenes {
+      margin-right: 2px;
+      font-size: 40px;
+      margin-left: -5%;
+    }
+    #pound {
+      margin-right: 2px;
+      font-size: 40px;
+      margin-left: -5%;
+    }
+    /* Panel de control */
+    #sidebarAdmin .balance .info span {
+        font-size: 14px;
+    }
+    #containerAdminPanel {
+        margin-left: 0%;
+        width: 1400px;
+        background: #D2DEE5;
+    }
+
+    #botonPanel {
+        height: 100%;
+        margin-right: 0%;
+        margin-top: -12%;
+        position: relative;
+    }
+    #botonPanel .dropdown-content {
+        display: none;
+        z-index: 1;
+        position: absolute;
+        margin-left: 88%;
+        margin-top: -9%;
+    }
+    #botonPanel .dropdown-content a {
+        text-decoration: none;
+        display: block;
+        color: black;
+        font-size: 18px;
+        color: white ;
+    }
+    #botonPanel .dropdown-content a:hover {
+        background-color: #80BFFF;
+        color: black;
+    }
+    #botonPanel button {
+        margin-right: 0%;
+        margin-left: 75%;
+        margin-top: -5%;
+        font-size: 20px;
+        height: 100%;
+    }
+    #mainBodyPanel .promo_card{
+        display: block;
+        height: 20%;
+        margin-top: 20px;
+    }
+    #mainBodyPanel .promo_card button:hover {
+        color: white;
+        background: blue;
+    }
+
+    /* validar transacciones */
+    #mainBodyPanel {
+        margin-top: 20px;
+    }
+    #mainBodyPanel .contenedorTransacciones {
+    width: 100%;
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 0.5rem 1rem 1rem 3rem;
+    background: rgb(37, 37, 37);
+    /* height: 500px; */
+    padding-top: 30px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin-bottom: 50px;
+    } 
+  
+    #informacionContenedorTransacciones{
+         margin-top: 20px;
+         display: flex;
+         justify-content: center;
+         font-size: 1.5em;
+    }
+    #informacionContenedorTransacciones span {
+        display: block;
+    }
+    #informacionContenedorTransacciones .contenedorTransaccionesPreguntas {
+        display: block;
+        padding-right:20px ;
+    }
+    #informacionContenedorTransacciones .contenedorTransaccionesRespuestas {
+        display: block;
+    } 
+    #botonTransaccion {
+        /* margin-left: 45%; */
+        padding-top: 20px;
+        justify-content: center;
+    }
+    #botonTransaccion button {
+        border-radius: 8px;
+        font-size: 25px;
+        font-weight: 600; 
+        text-decoration: none;
+    }
+    #aceptarTransaccion:hover {
+        background: green;
+    }
+    #rechazarTransaccion:hover {
+        background: red;
+    }
+    
