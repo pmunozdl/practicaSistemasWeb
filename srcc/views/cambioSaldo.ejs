@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title%></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/stylesheets/style.css'/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
+    <script src='../public/javascripts/scripts.js' defer></script>
+</head>
+<body id="cambiaSaldo">
+    <header class="headerSidebar">
+        <nav class="navigation">
+            <a href='inicioInvitado.html' class="boton" id="Portada">Inicio</a>
+            <a href='EnviaDinero.html' class="boton" id="botonSobreNosotros">Envía dinero</a>
+            <a href="index.html"><button class="botonLogin" id="botonRegistro"> Cerrar sesión </button></a>
+        </nav>
+    </header>
+    <nav class="sidebar close"> 
+        <header>
+           <div class="image-text">
+                <span class="image">
+                    <img src="images/logo.png" alt="logo" />
+                </span>
+                <div class="text header-text">
+                    <span class="name"> Bienvenido</span>
+                    <span class="profession">"Nombre Usuario"</span>
+                    
+                </div>
+           </div> 
+           <i class='bx bx-chevron-right toggle'></i>
+           
+        </header>
+        <div class="menu-bar"> 
+            <div class="menu">
+                <li class="search-box">
+                    <i class="bx bx-search icon"></i>
+                    <input type="search" placeholder="Search...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="inicioUsuarioRegistrado.html">
+                            <i class='bx bx-credit-card'></i>
+                            <span class="text nav-text"> Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="EnviaDinero.html">
+                            <i class='bx bx-credit-card'></i>
+                            <span class="text nav-text"> Envia Dinero</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="bizum.html">
+                            <i class='bx bx-money-withdraw' ></i>
+                            <span class="text nav-text">Bizum</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="transferencia.html">
+                            <i class='bx bx-money-withdraw' ></i>
+                            <span class="text nav-text">Transferencia</span>
+                        </a>
+                    </li>
+                </ul>
+                
+            </div>
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class="bx bx-log-out"></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </nav>
+    <div class = "contenidoConversor">
+        <header> Cambia tu saldo </header>
+        <form action="#">
+            <div class="amount">
+                <p>Introduce cantidad</p>
+                <input type="text" value="1"/>
+            </div>
+            <div class="drop-list">
+                <div class="from">
+                    <p>De:</p>
+                    <div class="select-box">
+                        <img src="https://flagcdn.com/48x36/us.png" alt="flag">
+                        <select></select>
+                    </div>
+                </div>
+                <div class="icon"> <i class="fas fa-exchange-alt"></i></div>
+                <div class="to">
+                    <p>A:</p>
+                    <div class="select-box">
+                        <img src="https://flagcdn.com/48x36/es.png" alt="flag">
+                        <select></select>
+                    </div>
+                </div>
+            </div>
+            <div class="exchange-rate">Obten el resultado</div>
+            <button type="submit">Convertir</button>
+        </form>
+    </div>
+    <div class = "tuSaldo">
+        <h3> Tu saldo actual es:</h3>
+        <p> 1 $</p>
+        <p> 1 &#8364</p>
+    </div>
+</body>
+</html>

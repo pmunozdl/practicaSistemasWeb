@@ -8,6 +8,18 @@ const indexRouter = require('./routes/index');
 const sobreNosotrosRouter = require('./routes/sobreNosotros');
 const loginRouter = require('./routes/login');
 const registroRouter = require('./routes/registro');
+const inicioInvitadoRouter = require('./routes/inicioInvitado');
+const beneficioRegistroRouter = require('./routes/beneficioRegistro');
+const conversorRouter = require('./routes/conversor');
+const inicioUsuarioRegistradoRouter = require('./routes/inicioUsuarioRegistrado');
+const cambioSaldoRouter = require('./routes/cambioSaldo');
+const bizumRouter = require('./routes/bizum');
+const transferenciaRouter = require('./routes/transferencia');
+const enviaDineroRouter = require('./routes/enviaDinero');
+const interfazAdminRouter = require('./routes/interfazAdmin');
+const PanelControlRouter = require('./routes/panelControl');
+const validarTransaccionesRouter = require('./routes/validarTransacciones');
+
 
 const usersRouter = require('./routes/users');
 
@@ -27,6 +39,17 @@ app.use('/', indexRouter);
 app.use('/sobreNosotros', sobreNosotrosRouter);
 app.use('/login', loginRouter);
 app.use('/registro', registroRouter);
+app.use('/inicioInvitado', inicioInvitadoRouter);
+app.use('/beneficioRegistro', beneficioRegistroRouter);
+app.use('/conversor', conversorRouter);
+app.use('/inicioUsuarioRegistrado', inicioUsuarioRegistradoRouter);
+app.use('/cambioSaldo', cambioSaldoRouter);
+app.use('/bizum', bizumRouter);
+app.use('/transferencia', transferenciaRouter);
+app.use('/enviaDinero', enviaDineroRouter);
+app.use('/interfazAdmin', interfazAdminRouter);
+app.use('/validarTransacciones', validarTransaccionesRouter);
+app.use('/PanelControl', PanelControlRouter);
 
 app.use('/users', usersRouter);
 

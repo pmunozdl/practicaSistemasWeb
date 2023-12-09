@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title%></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/stylesheets/style.css'/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
+    <script src='../public/javascripts/scripts.js' defer></script>
+</head>
+<body id="inicioUsuario">
+    <header class="headerSidebar">
+        <nav class="navigation">
+            <a href='EnviaDinero.html' class="boton" id="Portada">EnviaDinero</a>
+            <a href='conversor.html' class="boton" id="botonSobreNosotros">Conversor</a>
+            <a href="inicioUsuarioRegistrado.html"><button class="botonLogin" id = "botonLogin"> Volver inicio</button></a>
+            <a href="index.html"><button class="botonLogin" id="botonRegistro"> Cerrar Sesión </button></a>
+        </nav>
+    </header>
+    <nav class="sidebar close"> 
+        <header>
+           <div class="image-text">
+                <span class="image">
+                    <img src="images/logo.png" alt="logo" />
+                </span>
+                <div class="text header-text">
+                    <span class="name"> Bienvenido</span>
+                    <span class="profession">nombreUsuario</span>
+                    
+                </div>
+           </div> 
+           <i class='bx bx-chevron-right toggle'></i>
+           
+        </header>
+        <div class="menu-bar"> 
+            <div class="menu">
+                <li class="search-box">
+                    <i class="bx bx-search icon"></i>
+                    <input type="search" placeholder="Search...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="conversor.html">
+                            <i class='bx bx-credit-card'></i>
+                            <span class="text nav-text"> Conversor</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="EnviaDinero.html">
+                            <i class='bx bxs-check-square'></i>
+                            <span class="text nav-text">EnviaDinero</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="inicioUsuarioRegistrado.html">
+                            <i class='bx bx-log-in'></i>
+                            <span class="text nav-text"> Volver Inicio</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="">
+                    <a href="index.html">
+                        <i class="bx bx-log-out"></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </nav>
+    <div class = "contenidoInicioUsuario">
+        <!-- contiene todo -->
+        <div class="wrapper" id="inicioUsuarioRegistrado"> 
+            <div class="acciones">
+               <p>"Bienvenido Nombre usuario a su panel de control"</p>
+               <br>
+               <p> Acciones:</p>
+               <br><br>
+               <a href="EnviaDinero.html"><button class="boton"> Envía dinero</button></a>
+               <a href="cambio Saldo.html"><button class="boton"> Convertir</button></a>
+            </div>
+            <div class="saldo">
+                <br>
+                <p>Tu saldo:</p>
+                <div class = "cifra">
+                    <div class = "acciones2">
+                        <a href="#"><button class="boton">+</button></a>
+                        <a href="#"><button class="boton">-</button></a> 
+                        <p> 1 $</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ultimosMovimientos">
+                <p>Aquí puede ver un resumen de sus últimos movimientos</p>
+                <div>
+                    últimos movimientos
+                </div>
+            </div>
+        </div>
+        <div class="sidebarDerecha" id="sidebarDerechaInicio">
+            <div class="titulo">
+                <h4>Account Balance</h4>
+            </div>
+            <div class="balance">
+              <!-- <i class="fas fa-dollar icon"></i> -->
+              <i id="dolar" class='bx bx-dollar'></i>
+              <div class="info">
+                <h5>Dollar</h5>
+                <span></i>25,000.00<i class='bx bx-dollar'></i></span>
+              </div>
+            </div>
+            
+            <div class="balance">
+            <i id = "inr" class='bx bx-rupee' ></i>
+              <div class="info">
+                <h5>INR</h5>
+                <span></i>300,000.00<i class='bx bx-rupee' ></i></span>
+              </div>
+            </div>
+      
+            <div class="balance">
+            <i id = "euro" class='bx bx-euro' ></i></i>
+              <div class="info">
+                <h5>Euro</h5>
+                <span></i>25,000.00<i class='bx bx-euro' ></i></span>
+              </div>
+            </div>
+      
+            <div class="balance">
+            <i id="yenes"class='bx bx-yen'></i></i>
+              <div class="info">
+                <h5>JPY</h5>
+                <span></i>220,000.00<i class='bx bx-yen'></i></span>
+              </div>
+            </div>
+      
+            <div class="balance">
+                <i id= "pound"class='bx bx-pound' ></i>
+              <div class="info">
+                <h5>Pound</h5>
+                <span></i>30,000.00<i class='bx bx-pound'></i></span>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+    </div>
+</body>
+</html>
