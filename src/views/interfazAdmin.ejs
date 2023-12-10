@@ -1,48 +1,8 @@
-<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title><%= title%></title>
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
+<%- include("headerAdmin", {}) %>
         <link rel='stylesheet' type='text/css' media='screen' href='/stylesheets/styleAdmin.css'/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
         <script src='../public/javascripts/scripts.js' defer></script>
-    </head>
-    <body class="bodyAdmin">
-        <header class="headerAdmin">
-        <div class="logoAdmin">
-            <a href="#">SBank</a>
-            <div class="search_box">
-            <input type="text" placeholder="Search">
-            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-            </div>
-        </div>
-    
-        <div class="header-icons">
-            <i class="fas fa-bell"></i>
-            <div class="account">
-            <img src="../public/images/logo.png" alt="">
-            <h4>Administrador</h4>
-            </div>
-        </div>
-        </header>
-        <div class="containerAdmin">
-        <nav class="navAdmin">
-            <div class="side_navbar">
-            <span>Main Menu</span>
-            <a href="interfazAdmin" class="active">Inicio</a>
-            <a href="PanelControl">Panel de usuarios</a>
-            <a href="validarTransaccion">Validar Transacciones</a>
-            <a href="/"> Cerrar Sesión </a>
-    
-            <div class="links">
-                <span>Quick Link</span>
-                <a href="/">LogOut</a>
-            </div>
-            </div>
-        </nav>
-    
         <div class="main-body">
             <h2>Dashboard</h2>
             <div class="promo_card">
@@ -217,7 +177,6 @@
                 <span>Last Login: 23-10-2023</span>
             </div>
             </div>
-        </div>
         </div>
     </body>
     </html>
