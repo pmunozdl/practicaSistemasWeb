@@ -42,16 +42,26 @@ app.use('/registro', registroRouter);
 app.use('/inicioInvitado', inicioInvitadoRouter);
 app.use('/beneficioRegistro', beneficioRegistroRouter);
 app.use('/conversor', conversorRouter);
-app.use('/inicioUsuarioRegistrado', inicioUsuarioRegistradoRouter);
-app.use('/cambioSaldo', cambioSaldoRouter);
-app.use('/bizum', bizumRouter);
-app.use('/transferencia', transferenciaRouter);
-app.use('/enviaDinero', enviaDineroRouter);
-app.use('/interfazAdmin', interfazAdminRouter);
-app.use('/validarTransacciones', validarTransaccionesRouter);
-app.use('/PanelControl', PanelControlRouter);
+app.use('/inicioUsuarioRegistrado', restrict, inicioUsuarioRegistradoRouter);
+app.use('/cambioSaldo', restrict, cambioSaldoRouter);
+app.use('/bizum', restrict, bizumRouter);
+app.use('/transferencia', restrict, transferenciaRouter);
+app.use('/enviaDinero', restrict, enviaDineroRouter);
+app.use('/interfazAdmin', restrict, interfazAdminRouter);
+app.use('/validarTransacciones', restrict, validarTransaccionesRouter);
+app.use('/PanelControl', restrict, PanelControlRouter);
 
 app.use('/users', usersRouter);
+
+
+function restrict(req, res, next){
+  if(req.session.user){
+    next();
+  } else {
+    req.session.error = "Unauthorized access";
+    res.redirect("/login");
+  }
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
