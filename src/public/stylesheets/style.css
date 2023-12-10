@@ -1001,7 +1001,7 @@ body #inicioUsuario {
     /* width: 1000px; */
 }
 
-#cambiaSaldo .tuSaldo {
+.tuSaldo {
     margin-left: 10%;
     background: white;
     border-color: black;
