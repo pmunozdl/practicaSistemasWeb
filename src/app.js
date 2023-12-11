@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const session = require('express-session');
+
 
 const indexRouter = require('./routes/index');
 const sobreNosotrosRouter = require('./routes/sobreNosotros');
@@ -34,7 +36,23 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  resave: false,
+  saveUninitialized: false,
+  secret: 'El secreto que queramos nosotros'
+}));
 
+// app.use(function(req, res, next){
+//   let error = req.session.error;
+//   let message = req.session.message;
+//   delete req.session.error;
+//   delete req.session.message;
+//   res.locals.error = "";
+//   res.locals.message = "";
+//   if (error) res.locals.error = `<p>${error}</p>`;
+//   if (message) res.locals.message = `<p>${message}</p>`;
+//   next();
+// });
 app.use('/', indexRouter);
 app.use('/sobreNosotros', sobreNosotrosRouter);
 app.use('/login', loginRouter);

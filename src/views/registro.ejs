@@ -19,25 +19,25 @@
     <div id = "registro" class="wrapper">
     <div class="form-box login" >
         <h2>Registro</h2>
-        <form action="login">
+        <form method="post" action="/registro">
             <div class="input-box">
                 <span class="icon"></span>
-                <input id="telefono" required/>
-                <label type="text">Teléfono</label>
+                <input id="phoneNumber" type="text" name="phoneNumber" required/>
+                <label >Teléfono</label>
             </div>
             <div class="input-box">
                 <span class="icon"></span>
-                <input type="text" id = "username" required/>
+                <input type="text" id = "username" name="username" required/>
                 <label>Nombre usuario</label>
             </div>
             <div class="input-box">
                 <span class="icon"></span>
-                <input type="password" id = "password" required/>
+                <input type="password" id = "password" name="password" required/>
                 <label>Contraseña</label>
             </div>
             <div class="input-box">
                 <span class="icon"></span>
-                <input type="password" id = "password1" required/>
+                <input type="password" id = "password1" name="password1" required/>
                 <label>Repite la contraseña</label>
             </div>
             <div class = "login-register">

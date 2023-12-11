@@ -22,9 +22,10 @@ module.exports = (sequelize) => {
             unique: false
         },
         phoneNumber: {
-            allowNull: false,
+            // allowNull: false,
             type: DataTypes.STRING,
             unique:true
         }
     });
+    //TO DO: añadir parámetros como last login, saldo...
 }

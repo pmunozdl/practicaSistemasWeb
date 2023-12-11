@@ -1,10 +1,9 @@
 const { Sequelize } = require('sequelize'); //cargo la librería sequelize
 const bcrypt = require('bcrypt');
-//const logger = require('../logger');
 
 function generateRandomNineDigitNumber() {
     let randomNumber = "";
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 8; i++) {
       randomNumber += Math.floor(Math.random() * 8);
       numero = "6" + randomNumber;
     }
@@ -27,7 +26,7 @@ for (const modelDefiner of modelDefiners){
 }
 
 async function reset(){
-    await sequelize.sync({force: true}); // false para que no se reinice la DB
+    await sequelize.sync({force: false}); // false para que no se reinice la DB
     const count = await sequelize.models.user.count();
     const users = [
         {username: 'user'},
@@ -37,7 +36,6 @@ async function reset(){
         for (let index = 0; index < users.length; index++){
             users[index].password = await bcrypt.hash(users[index].username, 10);
             users[index].phoneNumber = await generateRandomNineDigitNumber();
-            console.log(users[index].phoneNumber);
         }
         await sequelize.models.user.bulkCreate(users);
         }
