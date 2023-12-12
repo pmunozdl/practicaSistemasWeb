@@ -25,6 +25,20 @@ module.exports = (sequelize) => {
             // allowNull: false,
             type: DataTypes.STRING,
             unique:true
+        },
+        saldo: {
+            type: DataTypes.FLOAT,
+            unique: false,
+            allowNull: false,
+            defaultValue: 0
+        },
+        rol: {
+            type: DataTypes.ENUM("admin", "user"),
+            allowNull: true
+        },
+        last_login: {
+            type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW
         }
     });
     //TO DO: añadir parámetros como last login, saldo...

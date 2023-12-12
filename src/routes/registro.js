@@ -14,17 +14,37 @@ router.post('/', async function(req, res, next){
   let pass = req.body.password; //agarrar name de input
   let pass1 = req.body.password1;
   let phoneNumber = req.body.phoneNumber;
-  //const roles = req.body.roles;
-  
+
   const newUser = await registerUser(username, pass, phoneNumber);
   req.session.user = newUser;
   req.session.message = "Welcome!"
   res.redirect("/inicioUsuarioRegistrado");
 });
 
+async function defRol (username) {
+  if (username  ==  "admin") {
+    rol = "admin";
+  } else {
+    rol = "user";
+  }
+  return rol;
+}
+
+async function defId () {
+  // const lastElement = models.user.last();
+  // const lastId = lastElement.id;
+  // console.log(lastId);
+  // console.log("hola");
+  // return lastId;
+  var randomNumber = Math.floor(Math.random() * 10) + 1;
+  return randomNumber;
+}
 async function registerUser(username, pass, phoneNumber){
   const password = await bcrypt.hash(pass, 10);
-  const newUser = await models.user.create({username, password, phoneNumber});
+  const rol = await defRol(username);
+  const id = await defId();
+  let last_login = new Date();
+  const newUser = await models.user.create({id, username, password, phoneNumber, rol, last_login});
   return newUser;
 }
 
@@ -54,4 +74,5 @@ async function registerUser(username, pass, phoneNumber){
 //   req.session.error = "User already exists";
 //   res.redirect("/registro");
 // }
+
 module.exports = router;
