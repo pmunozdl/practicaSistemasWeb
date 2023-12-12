@@ -25,7 +25,6 @@ function passwordConfirmation() {
         } else {
             document.getElementById('Error').innerHTML = "<h3>No coinciden las contraseñas.</h3>"
             return false;
-            
         }
 
     }  

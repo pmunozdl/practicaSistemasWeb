@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const { models } = require('../sequelize');
+const bcrypt = require("bcrypt");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -7,15 +9,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', async function(req, res, next){
-  let username = req.body.user;
-  const user = await models.user.findOne({ where: { username } });
+  let phoneNumber = req.body.phoneNumber;
+  let password = req.body.password;
+  const user = await models.user.findOne({ where: { phoneNumber } });
   //console.log(user);
   if(user){
-      bcrypt.compare(req.body.pass, user.password, function(err, result){
+      bcrypt.compare(password, user.password, function(err, result){
           if(result){
               req.session.user = user;
-              req.session.message = "Welcome!"
-              res.redirect("/restricted");
+              req.session.message = "Welcome!";
+              user.update({last_login: new Date()}, {where: { phoneNumber: phoneNumber }});
+              res.redirect("/inicioUsuarioRegistrado");
           } else {
               req.session.error = "Incorrect username or password";
               res.redirect("/login");

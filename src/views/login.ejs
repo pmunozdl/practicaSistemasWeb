@@ -18,22 +18,18 @@
     <div class="wrapper">
     <div class="form-box login">
         <h2>Login</h2>
-        <form action="inicioUsuarioRegistrado">
+        <form method="post" action="/login">
             <div class="input-box">
                 <span class="icon"></span>
-                <input id="telefono" required/>
+                <input id="phoneNumber"  name="phoneNumber" required/>
                 <label type="text">Teléfono</label>
             </div>
             <div class="input-box">
                 <span class="icon"></span>
-                <input type="password" id = "contraseña" required/>
+                <input type="password" id = "password" name="password" required/>
                 <label>Contraseña</label>
             </div>
-            <div class = "remember-forgot">
-                <label> <input type="checkbox">Recordarme</label>
-                <a href="#">Olvidaste tu Contraseña?</a>
-            </div>
-            <button type="submit" class="boton" onclick="redirigir()"> Iniciar sesión </button>
+            <button type="submit" class="boton"> Iniciar sesión </button>
             <div class="login-register">
                 <p> ¿Todavía no tienes cuenta? </p>
                 <a href="registro" class="register-link"> Regístrate ahora! </a>

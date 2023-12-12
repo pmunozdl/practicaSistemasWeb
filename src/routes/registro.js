@@ -47,8 +47,7 @@ for (const modelDefiner of modelDefiners){
 }
 // async function defId () {
 //   let count = await sequelize.models.user.count();
-//   return count + 1;
-  
+//   return count + 1;  
 
 async function registerUser(username, pass, phoneNumber){
   const password = await bcrypt.hash(pass, 10);
