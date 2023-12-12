@@ -26,7 +26,7 @@ for (const modelDefiner of modelDefiners){
 }
 
 async function reset(){
-    await sequelize.sync({force: true}); // false para que no se reinice la DB
+    await sequelize.sync({force: false}); // false para que no se reinice la DB
     const count = await sequelize.models.user.count();
     const users = [
         {username: 'user'},

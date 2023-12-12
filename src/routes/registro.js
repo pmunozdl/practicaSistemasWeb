@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const { models } = require('../sequelize');
 const bcrypt = require("bcrypt");
+const { Sequelize } = require('sequelize'); //cargo la librería sequelize
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('registro', { title: 'Registro', user: req.session.user });
@@ -29,15 +31,24 @@ async function defRol (username) {
   }
   return rol;
 }
+const sequelize = new Sequelize({
+  dialect: 'sqlite',
+  storage: 'sequelize/db.sqlite',
+  logging: true
+});
 
+const modelDefiners = [
+  require('../sequelize/models/user.model'),
+  // El resto de modelos
+];
+
+for (const modelDefiner of modelDefiners){
+  modelDefiner(sequelize);
+}
 async function defId () {
-  // const lastElement = models.user.last();
-  // const lastId = lastElement.id;
-  // console.log(lastId);
-  // console.log("hola");
-  // return lastId;
-  var randomNumber = Math.floor(Math.random() * 10) + 1;
-  return randomNumber;
+  let count = await sequelize.models.user.count();
+  return count + 1;
+  
 }
 async function registerUser(username, pass, phoneNumber){
   const password = await bcrypt.hash(pass, 10);
