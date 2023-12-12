@@ -45,17 +45,17 @@ const modelDefiners = [
 for (const modelDefiner of modelDefiners){
   modelDefiner(sequelize);
 }
-async function defId () {
-  let count = await sequelize.models.user.count();
-  return count + 1;
+// async function defId () {
+//   let count = await sequelize.models.user.count();
+//   return count + 1;
   
-}
+
 async function registerUser(username, pass, phoneNumber){
   const password = await bcrypt.hash(pass, 10);
   const rol = await defRol(username);
-  const id = await defId();
+  // const id = await defId();
   let last_login = new Date();
-  const newUser = await models.user.create({id, username, password, phoneNumber, rol, last_login});
+  const newUser = await models.user.create({username, password, phoneNumber, rol, last_login});
   return newUser;
 }
 
