@@ -1,4 +1,4 @@
-const { Sequelize } = require('sequelize'); //cargo la librería sequelize
+const { Sequelize, TIME } = require('sequelize'); //cargo la librería sequelize
 const bcrypt = require('bcrypt');
 
 function generateRandomNineDigitNumber() {
@@ -17,15 +17,15 @@ const sequelize = new Sequelize({
 });
 
 const modelDefiners = [
-    require('./models/user.model')
-    // El resto de modelos
+    require('./models/user.model'),
+    require('./models/transaccion.model')
 ];
 
 for (const modelDefiner of modelDefiners){
     modelDefiner(sequelize);
 }
 
-async function reset(){
+async function resetUser(){
     await sequelize.sync({force: false}); // false para que no se reinice la DB
     const count = await sequelize.models.user.count();
     const users = [
@@ -36,7 +36,7 @@ async function reset(){
         for (let index = 0; index < users.length; index++){
             users[index].password = await bcrypt.hash(users[index].username, 10);
             users[index].phoneNumber = await generateRandomNineDigitNumber();
-            users[index].id = await index +1;
+            // users[index].id = await index +1;
             if (users[index].username == "admin") {
                 users[index].rol = "admin";
             } else {
@@ -46,6 +46,24 @@ async function reset(){
         await sequelize.models.user.bulkCreate(users);
         }
     }
-reset();
+
+async function resetTransaccion(){
+    await sequelize.sync({force: true}); // false para que no se reinice la DB
+    const count = await sequelize.models.transaccion.count();
+    const transacciones = [
+        {emisor: 'prueba'},
+    ];
+    if (count == 0){
+        for (let index = 0; index < transacciones.length; index++){
+            transacciones[index].receptor = "prueba";
+            transacciones[index].cantidad = 0;
+            // users[index].id = await index +1;
+            transacciones[index].fecha = new Date();
+        }
+    await sequelize.models.transaccion.bulkCreate(transacciones);
+        }
+    }
+resetUser();
+resetTransaccion();
 
 module.exports = sequelize;

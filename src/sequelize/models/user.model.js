@@ -41,5 +41,4 @@ module.exports = (sequelize) => {
             defaultValue: DataTypes.NOW
         }
     });
-    //TO DO: añadir parámetros como last login, saldo...
 }
