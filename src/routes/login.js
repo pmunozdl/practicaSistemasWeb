@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Login' });
+  res.render('login', { title: 'Login',  user: req.session.user});
 });
 
 router.post('/', async function(req, res, next){

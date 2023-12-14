@@ -48,7 +48,7 @@ async function resetUser(){
     }
 
 async function resetTransaccion(){
-    await sequelize.sync({force: true}); // false para que no se reinice la DB
+    await sequelize.sync({force: false}); // false para que no se reinice la DB
     const count = await sequelize.models.transaccion.count();
     const transacciones = [
         {emisor: 'prueba'},

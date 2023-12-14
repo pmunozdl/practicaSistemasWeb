@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('beneficioRegistro', { title: 'Beneficios de Registro' });
+  res.render('beneficioRegistro', { title: 'Beneficios de Registro', user: req.session.user});
 });
 
 module.exports = router;

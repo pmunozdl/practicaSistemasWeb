@@ -23,7 +23,7 @@ const PanelControlRouter = require('./routes/panelControl');
 const validarTransaccionesRouter = require('./routes/validarTransacciones');
 
 
-const usersRouter = require('./routes/users');
+// const usersRouter = require('./routes/users');
 
 const app = express();
 
@@ -65,16 +65,34 @@ app.use('/cambioSaldo', restrict, cambioSaldoRouter);
 app.use('/bizum', restrict, bizumRouter);
 app.use('/transferencia', restrict, transferenciaRouter);
 app.use('/enviaDinero', restrict, enviaDineroRouter);
-app.use('/interfazAdmin', restrict, interfazAdminRouter);
-app.use('/validarTransacciones', restrict, validarTransaccionesRouter);
-app.use('/PanelControl', restrict, PanelControlRouter);
+app.use('/interfazAdmin', restrictAdmin, interfazAdminRouter);
+app.use('/validarTransacciones', restrictAdmin, validarTransaccionesRouter);
+app.use('/PanelControl', restrictAdmin, PanelControlRouter);
+app.use('/logout', function(req, res, next){
+  req.session.destroy(function(){
+    res.redirect("/");
+  })
+})
 
-app.use('/users', usersRouter);
+// app.use('/users', usersRouter);
 
 
 function restrict(req, res, next){
   if(req.session.user){
     next();
+  } else {
+    req.session.error = "Unauthorized access";
+    res.redirect("/login");
+  }
+}
+function restrictAdmin(req, res, next){
+  if(req.session.user){
+    if (req.session.user.rol === "admin") {
+      next();
+    } else {
+      req.session.error = "Unauthorized access";
+      res.redirect("/inicioUsuarioRegistrado");
+    }
   } else {
     req.session.error = "Unauthorized access";
     res.redirect("/login");

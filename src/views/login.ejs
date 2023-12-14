@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title><%= title%></title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='/stylesheets/style.css'>
-    <script src="../public/javascript/login.js" defer></script>
-</head>
-<body class="fondoInicial">
-    <header>
-        <h2 class="logo">Sbank</h2>
-        <nav class="navigation">
-            <a href='/' class="boton">Inicio</a>
-            <a href='sobreNosotros' class="boton">Sobre Nosotros</a>
-            <a href="registro"> <button class="botonLogin"> Registro</button></a>
-        </nav>
-    </header>
+<%- include("header", {}) %>
     <div class="wrapper">
     <div class="form-box login">
         <h2>Login</h2>

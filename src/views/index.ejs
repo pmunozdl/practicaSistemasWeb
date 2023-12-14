@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title><%= title%></title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='/stylesheets/style.css'/>
-    <script src='../public/javascripts/index.js' defer></script>
-
-</head>
-<body class="fondoInicial">
-    <header>
-        <h2 class="logo">Sbank</h2>
-        <nav class="navigation">
-            <a href='/' class="boton" id="Portada">Inicio</a>
-            <a href='sobreNosotros' class="boton" id="botonSobreNosotros">Sobre Nosotros</a>
-            <a href="login"><button class="botonLogin" id = "botonLogin"> Iniciar Sesión</button></a>
-            <a href="registro"><button class="botonLogin" id="botonRegistro"> Registro</button></a>
-        </nav>
-    </header>
+<%- include("header", {}) %>
     <div class = "contenedor">
         <div class="texto"> 
             <h2>Bienvenido a sbank</h2>
