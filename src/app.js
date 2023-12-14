@@ -60,11 +60,11 @@ app.use('/registro', registroRouter);
 app.use('/inicioInvitado', inicioInvitadoRouter);
 app.use('/beneficioRegistro', beneficioRegistroRouter);
 app.use('/conversor', conversorRouter);
-app.use('/inicioUsuarioRegistrado', restrict, inicioUsuarioRegistradoRouter);
-app.use('/cambioSaldo', restrict, cambioSaldoRouter);
-app.use('/bizum', restrict, bizumRouter);
-app.use('/transferencia', restrict, transferenciaRouter);
-app.use('/enviaDinero', restrict, enviaDineroRouter);
+app.use('/inicioUsuarioRegistrado', restrictUser, inicioUsuarioRegistradoRouter);
+app.use('/cambioSaldo', restrictUser, cambioSaldoRouter);
+app.use('/bizum', restrictUser, bizumRouter);
+app.use('/transferencia', restrictUser, transferenciaRouter);
+app.use('/enviaDinero', restrictUser, enviaDineroRouter);
 app.use('/interfazAdmin', restrictAdmin, interfazAdminRouter);
 app.use('/validarTransacciones', restrictAdmin, validarTransaccionesRouter);
 app.use('/PanelControl', restrictAdmin, PanelControlRouter);
@@ -77,14 +77,19 @@ app.use('/logout', function(req, res, next){
 // app.use('/users', usersRouter);
 
 
-function restrict(req, res, next){
+function restrictUser(req, res, next){
   if(req.session.user){
-    next();
+    if (req.session.user.rol === "user") {
+      next();
+    } else {
+      req.session.error = "Unauthorized access";
+      res.redirect("/interfazAdmin");
+    }
   } else {
-    req.session.error = "Unauthorized access";
-    res.redirect("/login");
+      req.session.error = "Unauthorized access";
+      res.redirect("/login");
+    }
   }
-}
 function restrictAdmin(req, res, next){
   if(req.session.user){
     if (req.session.user.rol === "admin") {

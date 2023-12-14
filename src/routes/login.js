@@ -19,7 +19,11 @@ router.post('/', async function(req, res, next){
               req.session.user = user;
               req.session.message = "Welcome!";
               user.update({last_login: new Date()}, {where: { phoneNumber: phoneNumber }});
-              res.redirect("/inicioUsuarioRegistrado");
+              if (user.rol === "admin") {
+                return res.redirect("interfazAdmin");
+              } else if (user.rol === "user") {
+                res.redirect("/inicioUsuarioRegistrado");
+              }
           } else {
               req.session.error = "Incorrect username or password";
               res.redirect("/login");
