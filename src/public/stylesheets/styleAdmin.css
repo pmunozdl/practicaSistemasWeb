@@ -71,8 +71,8 @@ body, html{
     cursor: pointer;
     border-radius: 50%;
   }
-  .containerAdmin{
-    margin-top: 4%;
+#containerAdmin{
+    margin-top: 10%;
     display: flex;
     justify-content: space-between;
     height: 90%;
@@ -82,7 +82,7 @@ body, html{
   /* Side menubar section */
   .navAdmin{
     background: #BDBDBD;
-    margin-top: -2%;
+    margin-top: -4%;
   }
   .side_navbar{
     padding: 1px;
@@ -119,12 +119,15 @@ body, html{
   
   /* Main Body Section */
   .main-body{
-    width: 80%;
+    width: 105%;
     padding: 1rem;
 
   }
+  .history_lists {
+    width: 110%;
+  }
   .promo_card{
-    width: 96%;
+    width: 95%;
     color: #fff;
     margin-top: 10px;
     border-radius: 8px;
@@ -138,12 +141,14 @@ body, html{
     display: block;
     padding: 6px 12px;
     border-radius: 5px;
+    /* margin-top: -5%; */
     cursor: pointer;
   }
   .history_lists{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 95%;
   }
   .row{
     display: flex;
@@ -169,14 +174,14 @@ body, html{
   }
   
   /* Sidebar Section */
-  .sidebarderecha{
-      width: 20%;
-      height: 100%;
+ #sidebarAdmin{
+      width: 25%;
+      height: 110%;
       margin-right: -12%;
       padding: 2rem 1rem;
       background: #BDBDBD;
-      margin-left: 1%;
-      margin-top: -2%;
+      margin-left: -3%;
+      margin-top: -4%;
       justify-content: right;
     }
     .sidebarDerecha h4{
@@ -196,15 +201,19 @@ body, html{
     }
     #sidebarAdminT {
       margin-right: 0%;
-      margin-top: -71%;
-      margin-left: 110%;
+      margin-top: -100%;
+      margin-left: 129%;
       color: black;
+      width: 60%;
     }
     #sidebarAdminP {
-      margin-right: 0%;
-      margin-top: -44%;
-      margin-left: 88%;
+      margin-right: -29%;
+      margin-top: 0%;
+      margin-left: 0%;
       color: black;
+      width: 32%;
+      background: #BDBDBD;
+      height: 100%
     }
     .balance .icon{
       color: #fff;
@@ -248,27 +257,45 @@ body, html{
       margin-left: -5%;
     }
     /* Panel de control */
+    #containerAdminP {
+      margin-top: 10%;
+      width: 100%;
+      margin-left: 0%;
+      height: 90%;
+      display: flex;
+    }
+    #navAdmin {
+      width: 32%;
+      margin-left: -30%;
+      padding: 20px;
+      margin-right: 5%;
+      margin-top: 0%;
+      height: 100%;
+    }
     #sidebarAdmin .balance .info span {
         font-size: 14px;
     }
-    #containerAdminPanel {
+    #mainBodyPanel {
         margin-left: 0%;
-        width: 1400px;
+        width: 100%;
         background: #D2DEE5;
+        margin-top:100px;
+        margin-right: 5%;
+        height: 100%;
     }
 
     #botonPanel {
         height: 100%;
-        margin-right: 0%;
-        margin-top: -12%;
+        margin-right: 10%;
+        margin-top: -17%;
         position: relative;
     }
     #botonPanel .dropdown-content {
         display: none;
         z-index: 1;
         position: absolute;
-        margin-left: 88%;
-        margin-top: -9%;
+        margin-left: 93%;
+        margin-top: -15%;
     }
     #botonPanel .dropdown-content a {
         text-decoration: none;
@@ -284,7 +311,7 @@ body, html{
     #botonPanel button {
         margin-right: 0%;
         margin-left: 75%;
-        margin-top: -5%;
+        margin-top: -10%;
         font-size: 20px;
         height: 100%;
     }
@@ -292,7 +319,7 @@ body, html{
         display: block;
         height: 20%;
         margin-top: 20px;
-        width: 80%;
+        width: 100%;
     }
     #mainBodyPanel .promo_card button {
       margin-top: 1.5%;

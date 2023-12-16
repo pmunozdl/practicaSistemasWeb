@@ -27,5 +27,10 @@ module.exports = (sequelize) => {
             type: DataTypes.DATE,
             defaultValue: DataTypes.NOW
         },
+        tipo: {
+            type: DataTypes.STRING,
+            unique: false,
+            allowNull: false
+        },
     });
 }
