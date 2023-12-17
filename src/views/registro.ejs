@@ -1,11 +1,11 @@
 <%- include("header", {}) %>
     <div id = "registro" class="wrapper">
-    <div class="form-box login" >
+    <div class="form-box login" id="form">
         <h2>Registro</h2>
         <form method="post" action="/registro">
             <div class="input-box">
                 <span class="icon"></span>
-                <input id="phoneNumber" type="text" name="phoneNumber" required/>
+                <input id="phoneNumber" type="text" name="phoneNumber" min="9" max="9" required/>
                 <label >Teléfono</label>
             </div>
             <div class="input-box">
@@ -26,7 +26,7 @@
             <div class = "login-register">
                 <a href="login" class="register-link">¿Tienes ya una cuenta? Inicia sesión</a>
             </div>
-            <button type="submit" class="boton" onclick="redirigir()"> Registrarme </button>
+            <button type="submit" class="boton" onclick="passwordConfirmation()"> Registrarme </button>
         </form>
     </div>
 </body>

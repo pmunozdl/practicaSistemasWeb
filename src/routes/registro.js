@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const { models } = require('../sequelize');
 const bcrypt = require("bcrypt");
-const { Sequelize } = require('sequelize'); //cargo la librería sequelize
+const { Sequelize, Model } = require('sequelize'); //cargo la librería sequelize
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -16,11 +16,36 @@ router.post('/', async function(req, res, next){
   let pass = req.body.password; //agarrar name de input
   let pass1 = req.body.password1;
   let phoneNumber = req.body.phoneNumber;
-
-  const newUser = await registerUser(username, pass, phoneNumber);
-  req.session.user = newUser;
-  req.session.message = "Welcome!"
-  res.redirect("/inicioUsuarioRegistrado");
+  let user = await sequelize.models.user.findOne({where: {username}});
+  let phone = await sequelize.models.user.findOne({where: {phoneNumber}});
+  const regex = /^6\d{8}$/; //empieza por 6, y tiene 9 dígitos.
+  if (!user) { //compruebo si existe el usuario o el teléfono (deben ser únicos)
+    if (!phone) {
+      if (pass.length >= 8 && pass === pass1) {
+        if (regex.test(phone)) {
+        const newUser = await registerUser(username, pass, phoneNumber);
+        req.session.user = newUser;
+        req.session.message = "Welcome!"
+        res.redirect("/inicioUsuarioRegistrado");
+        } else {
+          req.session.error = "The phone number must be of the format 6ddddddd.";
+          res.redirect("/registro");
+        }
+      } else{
+          req.session.error = "La contraseña no es válida. Introduzca otra";
+          // alert("La contraseña no es válida");
+          res.redirect("/registro");
+      }
+    }else{
+      req.session.error = "Ya existe ese número de teléfono";
+      // alert("Ya existe ese usuario");
+      res.redirect("/registro");
+    }
+  } else {
+    req.session.error = "Ya existe ese username";
+    // alert("Ya existe ese usuario");
+    res.redirect("/registro");
+  }
 });
 
 async function defRol (username) {
@@ -45,20 +70,16 @@ const modelDefiners = [
 for (const modelDefiner of modelDefiners){
   modelDefiner(sequelize);
 }
-// async function defId () {
-//   let count = await sequelize.models.user.count();
-//   return count + 1;  
 
 async function registerUser(username, pass, phoneNumber){
   const password = await bcrypt.hash(pass, 10);
   const rol = await defRol(username);
-  // const id = await defId();
   let last_login = new Date();
   const newUser = await models.user.create({username, password, phoneNumber, rol, last_login});
   return newUser;
 }
 
-// if (!database.users[user]) {
+// if (!sequelize.models.user.username) {
 //   req.session.user = database.users[user]; //accedemos a la informacion del usuario si no existe
 //   if (pass != pass1) {
 //     req.session.error = "Passwords don't match";
