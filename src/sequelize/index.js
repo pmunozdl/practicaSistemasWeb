@@ -32,7 +32,7 @@ for (const modelDefiner of modelDefiners){
 }
 
 async function resetUser(){
-    await sequelize.sync({force: true}); // false para que no se reinice la DB
+    await sequelize.sync({force: false}); // false para que no se reinice la DB
     const count = await sequelize.models.user.count();
     const users = [
         {username: 'user'},
@@ -42,7 +42,6 @@ async function resetUser(){
         for (let index = 0; index < users.length; index++){
             users[index].password = await bcrypt.hash(users[index].username, 10);
             users[index].phoneNumber = await generateRandomNineDigitNumber();
-            // users[index].id = await index +1;
             if (users[index].username == "admin") {
                 users[index].rol = "admin";
             } else {
@@ -54,7 +53,7 @@ async function resetUser(){
     }
 
 async function resetTransaccion(){
-    await sequelize.sync({force: true}); // false para que no se reinice la DB
+    await sequelize.sync({force: false}); // false para que no se reinice la DB
     const count = await sequelize.models.transaccion.count();
     const transacciones = [
         {emisor: 'prueba'},

@@ -31,57 +31,28 @@
                 <table class="tableAdmin">
                 <thead>
                     <tr>
-                    <th>#</th>
-                    <th>Dates</th>
-                    <th>Name</th>
+                    <th>id</th>
+                    <th>Since</th>
+                    <th>Username</th>
                     <th>Número</th>
-                    <th>Dni</th>
+                    <th>Saldo</th>
                     </tr>
                 </thead>
+                <% i = 0; console.log(usuarios); %>
+                <% usuarios.forEach((username)=>{ %>
+                    <% if (i < 6) {%> 
                 <tbody>
                     <tr>
-                    <td>1</td>
-                    <td>2, Aug, 2022</td>
-                    <td>Sam Tonny</td>
-                    <td>625678901</td>
-                    <td>06712453F</td>
-                    </tr>
-                    <tr>
-                    <td>2</td>
-                    <td>29, July, 2022</td>
-                    <td>Code Info</td>
-                    <td>678905721</td>
-                    <td>12345678P</td>
-                    </tr>
-                    <tr>
-                    <td>3</td>
-                    <td>15, July, 2022</td>
-                    <td>Jhon David</td>
-                    <td>654321789</td>
-                    <td>09876543R</td>
-                    </tr>
-                    <tr>
-                    <td>4</td>
-                    <td>5, July, 2022</td>
-                    <td>Salina Gomiz</td>
-                    <td>654789012</td>
-                    <td>12346783R</td>
-                    </tr>
-                    <tr>
-                    <td>5</td>
-                    <td>29, June, 2022</td>
-                    <td>Gomiz</td>
-                    <td>654389012</td>
-                    <td>87634251P</td>
-                    </tr>
-                    <tr>
-                    <td>6</td>
-                    <td>28, June, 2022</td>
-                    <td>Elyana Jhon</td>
-                    <td>678942351</td>
-                    <td>78912345T</td>
+                    <td><%= username.dataValues.id%></td>
+                    <td><%= username.dataValues.createdAt %></td>
+                    <td><%= username.dataValues.username %></td>
+                    <td><%= username.dataValues.phoneNumber %></td>
+                    <td><%= username.dataValues.saldo %></td>
                     </tr>
                 </tbody>
+                <% } %>
+                <% i++ %>
+                <% }) %>
                 </table>
             </div>
     
@@ -152,3 +123,5 @@
         <%- include("footer", {}) %>
     </body>
     </html>
+
+    
