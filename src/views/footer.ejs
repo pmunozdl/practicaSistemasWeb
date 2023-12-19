@@ -2,43 +2,18 @@
     <% if (user.rol === "admin") { %>
     <div class="sidebarDerecha" id="sidebarAdmin">
         <h4>Usuarios</h4>
-        
-        <div class="balance">
-        <div class="info">
-            <h5>NombreUsuario1</h5>
-            <span>Last Login: 1-11-2023</span>
-        </div>
-        </div>
-        <div class="balance">
-        <div class="info">
-            <h5>NombreUsuario2</h5>
-            <span>Last Login: 31-1-2023</span>
-        </div>
-        </div>
-        <div class="balance">
-        <div class="info">
-            <h5>NombreUsuario3</h5>
-            <span>Last Login: 29-10-2023</span>
-        </div>
-        </div>
-        <div class="balance">
-        <div class="info">
-            <h5>NombreUsuario4</h5>
-            <span>Last Login: 27-10-2023</span>
-        </div>
-        </div>
-        <div class="balance">
-        <div class="info">
-            <h5>NombreUsuario5</h5>
-            <span>Last Login: 25-10-2023</span>
-        </div>
-        </div>
-        <div class="balance">
-        <div class="info">
-            <h5>NombreUsuario6</h5>
-            <span>Last Login: 23-10-2023</span>
-        </div>
-        </div>
+        <% i = 0; console.log(usuarios); %>
+        <% usuarios.forEach((username)=>{ %>
+          <% if (i < 8) {%> 
+            <div class="balance">
+              <div class="info">
+                  <h5><%= username.dataValues.username%></h5>
+                  <span><%= username.dataValues.last_login.toISOString()%></span>
+              </div>
+              </div>
+          <% } %>
+          <% i++ %>
+        <% }) %>
     </div>
     <% } else if (user.rol === "user") { %>
         <div class="sidebarDerecha" id="sidebarDerechaInicio">
