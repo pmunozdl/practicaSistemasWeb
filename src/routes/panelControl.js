@@ -17,11 +17,24 @@ router.post('/deleteUser',  async function(req, res, next){ // método para borr
         where: {
           username: username
         },
-      });; // destroy para sequelize. En arrays basta con con database.users.data[username]; 
+      });; // destroy para sequelize. En arrays basta con delete database.users.data[username]; 
       res.redirect("/interfazAdmin");
   }else{
       req.session.error = "Unauthorized access"; // si no es admin, no puede.
       res.redirect("/");
   }
 });
+
+/*  si fuera con array
+router.post('/deleteUser', function(req, res, next){ // método para borrar usuarios. Puede haber varios post en una clase
+    const username = req.body.username;
+    if(req.session.user.role == "admin") { // si el rol de usuario es igual a admin, puede acceder a la pestaña. 
+        delete database.users.data[username]; 
+        res.redirect("/admin");
+    }else{
+        req.session.error = "Unauthorized access"; // si no es admin, no puede.
+        res.redirect("/");
+    }
+});
+*/
 module.exports = router;

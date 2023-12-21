@@ -17,10 +17,10 @@
         <div class="main-body" id="mainBodyPanel">
           <h2>Dashboard</h2>
            <% i = 0; <!--console.log(usuarios);--> %> 
-        <% usuarios.forEach((username)=>{ %>
+        <% usuarios.forEach((username)=>{ %> <!-- si es con array, es  <% Object.keys(usuarios).forEach((nombreUsuario)=>{ %> -->
           <% if (i < 4) {%> 
             <div class="promo_card">
-              <h1><%= username.dataValues.username%></h1>
+              <h1><%= username.dataValues.username%></h1> <!-- si es con array, es <%=usuarios[nombreUsuario].username %>-->
               <span>Gestiona la información del usuario</span>
               <button>Learn More</button>
               <div id="botonPanel">
@@ -30,7 +30,7 @@
                     <button name = "username" value="<%= username.dataValues.username%>"> Transacciones </button>
                   </form>
                   <form action="/panelControl/deleteUser" method="post">                 <!--al poner deleteUser, hace lo que haga el post de admin.js que se llame deleteUser-->
-                    <button name = "username" value="<%= username.dataValues.username%>"> Eliminar </button>
+                    <button name = "username" value="<%= username.dataValues.username%>"> Eliminar </button> <!-- si es con array, es <%=usuarios[nombreUsuario].username %>-->
                   </form>
                 </div>
               </div>

@@ -35,4 +35,17 @@ router.post('/', async function(req, res, next){
   }
 });
 
+// ejemplo de post con Array
+// router.post('/', async function(req, res, next){
+//   const username = req.body.user;
+//   if(await database.users.isLoginRight(username, req.body.pass)){
+//       req.session.user = database.users.data[username]; //almacena el nombre de usuario. 
+//       req.session.user.last_login = new Date().toISOString(); //apartado del last login (sobrescribir)
+//       req.session.message = "Welcome!"
+//       res.redirect("/restricted");
+//   } else {
+//       req.session.error = "Incorrect user or password";
+//       res.redirect("/login");
+//   }
+// });
 module.exports = router;

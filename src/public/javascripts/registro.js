@@ -7,8 +7,8 @@ form.addEventListener('submit', (event) => {
 });
 
 function passwordConfirmation() {
-    let password = document.getElementById("pass").value;
-    let confirmPassword = document.getElementById("pass1").value;
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("password1").value;
 
     if(password.length < 8 || (confirmPassword.length < 8)){
         //document.getElementById("form").append('<div class="alert alert-danger" role="alert">Password must be 8 characters or more! Please change password</div>');
