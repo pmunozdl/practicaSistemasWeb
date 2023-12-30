@@ -11,12 +11,11 @@ module.exports = (sequelize) => {
         emisor: {
             allowNull: false,
             type: DataTypes.STRING,
-            unique: true,
         },
         receptor:{
             allowNull: false,
             type: DataTypes.STRING,
-            unique: true,
+            unique:false
         },
         cantidad: {
             allowNull: false,

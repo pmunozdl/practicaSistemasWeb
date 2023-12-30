@@ -11,15 +11,15 @@
             <div class="form-box bizum">
                 <h2>Bizum</h2>
                 <h4> Rellene los siguientes campos: </h4>
-                <form action="#">
+                <form method="post" id="formBizum">
                     <div class="input-box">
                         <span class="icon"></span>
-                        <input id="telefono" required/>
-                        <label type="text">Teléfono</label>
+                        <input id="receptor" name="receptor" required/>
+                        <label type="text">Nombre receptor</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"></span>
-                        <input type="text" id = "cantidad" required/>
+                        <input type="text" id = "cantidad" name="cantidad" required/>
                         <label>Cantidad</label>
                     </div>
                     <div class="input-box">
@@ -30,7 +30,7 @@
                     <div class="envioBizum"> 
                         <button type="submit" class="boton"> Enviar </button>
                         <div class="saldoRestante">
-                            Saldo restante: $0,00
+                            Saldo restante: <%= user.saldo%> $
                         </div>
                     </div>
                 </form>

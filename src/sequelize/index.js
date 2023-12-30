@@ -13,7 +13,6 @@ function generateRandomNineDigitNumber() {
 function generateTypeTransaccion() {
     tipo = ["Bizum", "Transferencia"];
     resultado = tipo[Math.floor(Math.random()*2)];
-    console.log(resultado);
     return resultado;
 }
 const sequelize = new Sequelize({

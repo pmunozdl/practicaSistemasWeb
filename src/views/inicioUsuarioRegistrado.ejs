@@ -14,11 +14,40 @@
                 <br>
                 <p>Tu saldo:</p>
                 <div class = "cifra">
+                    
                     <div class = "acciones2">
-                        <a href="#"><button class="boton">+</button></a>
-                        <a href="#"><button class="boton">-</button></a> 
-                        <p> 1 $</p>
+                        <button class="boton" id="operacionElegir" onclick="introducirCantidad()"> +-</button>
+                        <div id="introducirCantidad">
+                            <div>
+                                <br>
+                                <form method="post" id="annadirDinero">
+                                <label>Cantidad</label>
+                                <input type="text" id = "cantidad" name="cantidad" required/>
+                                <label>Nombre</label>
+                                <input type="text" id = "username" name="username" required/>
+                                <br>
+                                <div>
+                                <input class="form-check-input" id="check-cliente" type="radio" name="operacion" value="añadir" checked>
+                                      <label class="form-check-label" for="check-cliente">
+                                        Añadir
+                                      </label>                                    
+                                      <input class="form-check-input" id="check-duenno" type="radio" name="operacion" value="sacar">
+                                      <label class="form-check-label" for="check-duenno">
+                                        Sacar
+                                      </label>
+                                    </div>
+                                  </div>
+                                <div id="botonesAnnadir">
+                                    <button type="submit" class="boton" id="botonca"> Confirmar</button>
+                                    <button type="submit" class="boton" onclick="introducirCantidad()"> Cancelar</button>
+                                </div>
+                        </div>
+                    </form>
+                        
+                        <p> <%= user.saldo %> $</p>
+                        
                     </div>
+                    
                 </div>
             </div>
             <div class="ultimosMovimientos">
