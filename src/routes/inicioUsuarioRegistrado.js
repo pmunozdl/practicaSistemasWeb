@@ -9,13 +9,11 @@ router.get('/', function(req, res, next) {
 
 router.post('/', async function(req, res, next){
   let cifra = req.body.cantidad;
-  let username = req.body.username;
+  let username = req.session.user.username;;
   const user = await models.user.findOne({ where: { username } });  //agarrar name de input
   let operacion = req.body.operacion;
   
   let cantidad = Number(cifra);
-  console.log(user);
-  console.log(cantidad);
   if (user) {
     let saldo = user.dataValues.saldo;
     if (!isNaN(cantidad)) {

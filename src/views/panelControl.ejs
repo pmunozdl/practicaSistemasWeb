@@ -7,7 +7,6 @@
             <a href="PanelControl">Panel de usuarios</a>
             <a href="validarTransacciones">Validar Transacciones</a>
             <a href="/"> Cerrar Sesión </a>
-
             <div class="links">
                 <span>Quick Link</span>
                 <a href="/logout">LogOut</a>
@@ -17,10 +16,10 @@
         <div class="main-body" id="mainBodyPanel">
           <h2>Dashboard</h2>
            <% i = 0; <!--console.log(usuarios);--> %> 
-        <% usuarios.forEach((username)=>{ %> <!-- si es con array, es  <% Object.keys(usuarios).forEach((nombreUsuario)=>{ %> -->
+        <% usuarios.forEach((username)=>{ %>
           <% if (i < 4) {%> 
             <div class="promo_card">
-              <h1><%= username.dataValues.username%></h1> <!-- si es con array, es <%=usuarios[nombreUsuario].username %>-->
+              <h1><%= username.dataValues.username%></h1>
               <span>Gestiona la información del usuario</span>
               <button>Learn More</button>
               <div id="botonPanel">
@@ -30,7 +29,7 @@
                     <button name = "username" value="<%= username.dataValues.username%>"> Transacciones </button>
                   </form>
                   <form action="/panelControl/deleteUser" method="post">                 <!--al poner deleteUser, hace lo que haga el post de admin.js que se llame deleteUser-->
-                    <button name = "username" value="<%= username.dataValues.username%>"> Eliminar </button> <!-- si es con array, es <%=usuarios[nombreUsuario].username %>-->
+                    <button name = "username" value="<%= username.dataValues.username%>"> Eliminar </button>
                   </form>
                 </div>
               </div>
@@ -38,7 +37,7 @@
           <% } %>
           <% i++ %>
         <% }) %>
-        </div>
+      </div>
       <div class="sidebarDerecha" id="sidebarAdminP">
       <h4>Usuarios</h4>
         <% i = 0;%>
@@ -53,6 +52,3 @@
           <% } %>
           <% i++ %>
         <% }) %>
-    </div>
-    </body>
-    </html>
