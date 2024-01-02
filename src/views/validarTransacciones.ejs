@@ -1,5 +1,4 @@
 <%- include("header", {}) %>
-    <div id = "containerAdminT">
         <nav class="navAdmin" id="navAdminT">
             <div class="side_navbar">
             <span>Main Menu</span>
@@ -14,10 +13,13 @@
             </div>
             </div>
         </nav>
-        <div class="main-body" id="mainBodyPanel">
+        <div class="main-body" id="mainBodyPanelT">
           <h2>Dashboard</h2>
+          <% i = 0; %>
+            <% transacciones.forEach((transaccion)=>{ %>
+            <% if (i < 2) {%> 
           <div class="contenedorTransacciones">
-            <h1>Transaccion1</h1>
+            <h1>Transacción <%=i+1%></h1>
             <div id="informacionContenedorTransacciones">
                 <div class="contenedorTransaccionesPreguntas">
                     <span>Usuario emisor: </span>
@@ -26,78 +28,39 @@
                     <span>id transacción: </span>
                 </div>
                 <div class="contenedorTransaccionesRespuestas">
-                    <span> 687123405</span>
-                    <span> 652186721</span>
-                    <span> 55</span>
-                    <span> 111111111 </span>
+                    <span> <%= transaccion.dataValues.emisor%></span>
+                    <span> <%= transaccion.dataValues.receptor%></span>
+                    <span> <%= transaccion.dataValues.cantidad%></span>
+                    <span> <%= transaccion.dataValues.id%> </span>
                 </div>
             </div>
             <div id="botonTransaccion">
-                <button id="aceptarTransaccion"> Aceptar</button>
-                <button id="RechazarTransaccion"> Rechazar</button>
+                <form action="/validarTransacciones/updateTransaccion" method="post">
+                    <button id="aceptarTransaccion" name="username" value="<%=transaccion.dataValues.id%>"> Aceptar</button>
+                </form>
+                <form action="/validarTransacciones/deleteTransaccion" method="post">
+                    <button id="RechazarTransaccion" name="username" value="<%=transaccion.dataValues.id%>"> Rechazar</button>
+                </form>
             </div>
-            <div class="contenedorTransacciones">
-                <h1>Transaccion2</h1>
-                <div id="informacionContenedorTransacciones">
-                    <div class="contenedorTransaccionesPreguntas">
-                        <span>Usuario emisor: </span>
-                        <span>Usuario receptor: </span>
-                        <span>cantidad enviada: </span>
-                        <span>id transacción: </span>
-                    </div>
-                    <div class="contenedorTransaccionesRespuestas">
-                        <span> 687123405</span>
-                        <span> 652186721</span>
-                        <span> 55</span>
-                        <span> 111111111 </span>
-                    </div>
-                </div>
-                <div id="botonTransaccion">
-                    <button id="aceptarTransaccion"> Aceptar</button>
-                    <button id="RechazarTransaccion"> Rechazar</button>
-                </div>
-          </div>
-          <div class="sidebarDerecha" id="sidebarAdminT">
-            <h4>Usuarios</h4>
-            
-            <div class="balance">
-            <div class="info">
-                <h5>NombreUsuario1</h5>
-                <span>Last Login: 1-11-2023</span>
-            </div>
-            </div>
-            <div class="balance">
-            <div class="info">
-                <h5>NombreUsuario2</h5>
-                <span>Last Login: 31-1-2023</span>
-            </div>
-            </div>
-            <div class="balance">
-            <div class="info">
-                <h5>NombreUsuario3</h5>
-                <span>Last Login: 29-10-2023</span>
-            </div>
-            </div>
-            <div class="balance">
-            <div class="info">
-                <h5>NombreUsuario4</h5>
-                <span>Last Login: 27-10-2023</span>
-            </div>
-            </div>
-            <div class="balance">
-            <div class="info">
-                <h5>NombreUsuario5</h5>
-                <span>Last Login: 25-10-2023</span>
-            </div>
-            </div>
-            <div class="balance">
-            <div class="info">
-                <h5>NombreUsuario6</h5>
-                <span>Last Login: 23-10-2023</span>
-            </div>
+            <% } %>
+        <% i++ %>
+        <% }) %>        
             </div>
         </div>
-        
-      </div>
+        <div class="sidebarDerecha" id="sidebarAdminT">
+        <h4>Usuarios</h4>
+          <% i = 0;%>
+          <% usuarios.forEach((username)=>{ %>
+            <% if (i < 8) {%> 
+              <div class="balance">
+                <div class="info">
+                    <h5><%= username.dataValues.username%></h5>
+                    <span><%= username.dataValues.last_login.toISOString()%></span>
+                </div>
+                </div>
+            <% } %>
+            <% i++ %>
+          <% }) %>
+          </div>
     </body>
     </html>

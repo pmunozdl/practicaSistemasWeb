@@ -31,5 +31,10 @@ module.exports = (sequelize) => {
             unique: false,
             allowNull: false
         },
+        Confirmado: {
+            type: DataTypes.BOOLEAN,
+            unique: false,
+            allowNull: false
+        },
     });
 }

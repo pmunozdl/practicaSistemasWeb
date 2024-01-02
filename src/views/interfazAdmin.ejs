@@ -38,7 +38,7 @@
                     <th>Saldo</th>
                     </tr>
                 </thead>
-                <% i = 0; console.log(usuarios); %>
+                <% i = 0;%>
                 <% usuarios.forEach((username)=>{ %>
                     <% if (i < 6) {%> 
                 <tbody>
@@ -69,52 +69,25 @@
                     <th>Remitente</th>
                     <th>Destinatario</th>
                     <th>Cantidad</th>
+                    <th>Fecha</th>
                     </tr>
                 </thead>
+                <% i = 0; console.log(transacciones); %>
+                <% transacciones.forEach((transaccion)=>{ %>
+                    <% if (i < 6) {%> 
                 <tbody>
                     <tr>
-                    <td>1</td>
-                    <td>Bizum</td>
-                    <td>689123455</td>
-                    <td>678901234</td>
-                    <td>20</td>
+                    <td><%= transaccion.dataValues.id%></td>
+                    <td><%= transaccion.dataValues.tipo%></td>
+                    <td><%= transaccion.dataValues.emisor %></td>
+                    <td><%= transaccion.dataValues.receptor %></td>
+                    <td><%= transaccion.dataValues.cantidad %></td>
+                    <td><%= transaccion.dataValues.fecha.toLocaleDateString("es-ES")%></td>
                     </tr>
-                    <tr>
-                    <td>2</td>
-                    <td>Transaccion</td>
-                    <td>621345677</td>
-                    <td>698321576</td>
-                    <td>65</td>
-                    </tr>
-                    <tr>
-                    <td>3</td>
-                    <td>Transaccion</td>
-                    <td>652138934</td>
-                    <td>679312356</td>
-                    <td>50</td>
-                    </tr>
-                    <tr>
-                    <td>4</td>
-                    <td>Bizum</td>
-                    <td>619834657</td>
-                    <td>650123456</td>
-                    <td>10</td>
-                    </tr> 
-                    <tr>
-                    <td>5</td>
-                    <td>Transaccion</td>
-                    <td>692173094</td>
-                    <td>620923458</td>
-                    <td>100</td>
-                    </tr> 
-                    <tr>
-                    <td>6</td>
-                    <td>Transaccion</td>
-                    <td>670129405</td>
-                    <td>645789012</td>
-                    <td>80</td>
-                    </tr> 
                 </tbody>
+                <% } %>
+                <% i++ %>
+                <% }) %>
                 </table>
             </div>
             </div>

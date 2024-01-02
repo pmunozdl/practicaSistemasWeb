@@ -2,9 +2,12 @@ var express = require('express');
 var router = express.Router();
 const { models } = require('../sequelize');
 const { Sequelize, Model, NUMBER, FLOAT } = require('sequelize');
+const { Op } = Sequelize;
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado', user: req.session.user });
+router.get('/', async function(req, res, next) {
+  let username = req.session.user.username;
+  let transacciones = await models.transaccion.findAll({where: {Confirmado:true,[Op.or]:[{emisor:username}, {receptor:username}]}});
+  res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',transacciones,user: req.session.user });
 });
 
 router.post('/', async function(req, res, next){

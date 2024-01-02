@@ -12,7 +12,6 @@ router.get('/', async function(req, res, next) {
 router.post('/deleteUser',  async function(req, res, next){ // método para borrar usuarios. Puede haber varios post en una clase
   const username = req.body.username;
   if(req.session.user.rol == "admin") { // si el rol de usuario es igual a admin, puede acceder a la pestaña. 
-      console.log(usuario);
       await models.user.destroy({
         where: {
           username: username

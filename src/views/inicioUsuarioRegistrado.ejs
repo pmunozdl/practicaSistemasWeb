@@ -51,7 +51,34 @@
             <div class="ultimosMovimientos">
                 <p>Aquí puede ver un resumen de sus últimos movimientos</p>
                 <div>
-                    últimos movimientos
+                    <table class="tableAdmin">
+                        <thead>
+                            <tr>
+                            <th>#</th>
+                            <th>Tipo</th>
+                            <th>Remitente</th>
+                            <th>Destinatario</th>
+                            <th>Cantidad</th>
+                            <th>Fecha</th>
+                            </tr>
+                        </thead>
+                        <% i = 0; console.log(transacciones); %>
+                        <% transacciones.forEach((transaccion)=>{ %>
+                            <% if (i < 6) {%> 
+                        <tbody>
+                            <tr>
+                            <td><%= transaccion.dataValues.id%></td>
+                            <td><%= transaccion.dataValues.tipo%></td>
+                            <td><%= transaccion.dataValues.emisor %></td>
+                            <td><%= transaccion.dataValues.receptor %></td>
+                            <td><%= transaccion.dataValues.cantidad %></td>
+                            <td><%= transaccion.dataValues.fecha.toLocaleDateString("es-ES")%></td>
+                            </tr>
+                        </tbody>
+                        <% } %>
+                        <% i++ %>
+                        <% }) %>
+                        </table>
                 </div>
             </div>
         </div>

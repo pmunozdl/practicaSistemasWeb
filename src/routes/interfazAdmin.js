@@ -7,7 +7,8 @@ const { models } = require('../sequelize');
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   let usuarios = await models.user.findAll({where: {rol:"user"}});
-  res.render('interfazAdmin', { title: 'Bienvenido Administrador',usuarios, user: req.session.user });
+  let transacciones = await models.transaccion.findAll({where: {Confirmado:true}});
+  res.render('interfazAdmin', { title: 'Bienvenido Administrador',usuarios,transacciones, user: req.session.user });
 });
 
 module.exports = router;

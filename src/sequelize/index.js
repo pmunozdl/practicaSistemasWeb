@@ -15,6 +15,8 @@ function generateTypeTransaccion() {
     resultado = tipo[Math.floor(Math.random()*2)];
     return resultado;
 }
+
+
 const sequelize = new Sequelize({
     dialect: 'sqlite',
     storage: 'sequelize/db.sqlite',
@@ -53,24 +55,29 @@ async function resetUser(){
 
 async function resetTransaccion(){
     await sequelize.sync({force: false}); // false para que no se reinice la DB
-    const count = await sequelize.models.transaccion.count();
-    const transacciones = [
-        {emisor: 'prueba'},
-    ];
-    if (count == 0){
-        for (let index = 0; index < transacciones.length; index++){
-            transacciones[index].receptor = "prueba";
-            transacciones[index].cantidad = 0;
-            // users[index].id = await index +1;
-            transacciones[index].fecha = new Date();
-            if (parseInt(transacciones[index].cantidad) > 50) {
-                transacciones[index].tipo = "transacción";
-            } else {
-                transacciones[index].tipo = generateTypeTransaccion();
-            }
-        }
-    await sequelize.models.transaccion.bulkCreate(transacciones);
-        }
+    // const count = await sequelize.models.transaccion.count();
+    // const transacciones = [
+    //     {emisor: 'prueba'},
+    // ];
+    // if (count == 0){
+    //     for (let index = 0; index < transacciones.length; index++){
+    //         transacciones[index].receptor = "prueba";
+    //         transacciones[index].cantidad = 0;
+    //         // users[index].id = await index +1;
+    //         transacciones[index].fecha = new Date();
+    //         if (parseInt(transacciones[index].cantidad) > 50) {
+    //             transacciones[index].tipo = "Transferencia";
+    //         } else {
+    //             transacciones[index].tipo = generateTypeTransaccion();
+    //         }
+    //         if (transacciones[index].tipo = "Transferencia") {
+    //             transacciones[index].Confirmado = false;
+    //         } else if (transacciones[index].tipo = "Bizum") {
+    //             transacciones[index].Confirmado = true;
+    //         }
+    //     }
+    // await sequelize.models.transaccion.bulkCreate(transacciones);
+    //     }
     }
 resetUser();
 resetTransaccion();
