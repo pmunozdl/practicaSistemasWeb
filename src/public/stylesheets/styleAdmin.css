@@ -340,12 +340,13 @@ body, html{
     }
 
     #mainBodyPanelT {
-      margin-left: 5%;
+      /* margin-left: 5%; */
       width: 700px;
       background: #D2DEE5;
       margin-top: -110%;
-      margin-right: 5%;
+      /* margin-right: 5%; */
       height: 100%;
+      display: block;
     }
 
     #mainBodyPanelT .promo_card{
@@ -356,18 +357,19 @@ body, html{
   }
     #sidebarAdminT {
       /* margin-right: 20%; */
-      margin-top: -115%;
-      margin-left: 125%;
+      margin-top: -55%;
+      margin-left: 55%;
       color: black;
-      width: 30%;
+      width: 20%;
       background: #BDBDBD;
       height: 100%;
       padding: 20px;
+      position: fixed;
     }
     #mainBodyPanelT .contenedorTransacciones {
     width: 100%;
     color: #fff;
-    margin-top: 20px;
+    margin-top: 100px;
     border-radius: 8px;
     /* padding: 0.5rem 1rem 1rem 3rem; */
     background: rgb(37, 37, 37);

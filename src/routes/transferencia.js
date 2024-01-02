@@ -26,7 +26,7 @@ router.post('/', async function(req, res, next){
       if (!isNaN(cantidad)) {
         const nuevaTransacion = await newTransaccion(username, receptor, cantidad);
         user.update({saldo : saldo - cantidad}, {where: { user: user}});
-        receptor2.update({saldo: saldo2 + cantidad}, {where: {username: receptor}});
+        // receptor2.update({saldo: saldo2 + cantidad}, {where: {username: receptor}});
       } else {
         req.session.error = "El valor introducido no es un número";
         res.redirect("/transferencia");
