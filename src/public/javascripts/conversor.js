@@ -14,6 +14,7 @@ function calculate(){
    .then(res => res.json() )
    .then(data => {
        const taza = data.rates[moneda_two];
+    //    console.log(taza);
        
     //    cambioEl.innerText = `1 ${moneda_one} = ${taza} ${moneda_two}`;
 

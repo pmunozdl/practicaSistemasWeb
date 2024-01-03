@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('cambioSaldo', { title: 'Cambio Saldo', user: req.session.user });
@@ -9,23 +11,18 @@ router.post('/', async function(req, res, next){
   const monedaEl_one = req.body.moneda1;
   const monedaEl_two = req.body.moneda2;
   const cantidadEl_one = req.body.cantidad1;
-  const cantidadEl_two = req.body.cantidad2;
-  const moneda_one = monedaEl_one.value;
-  const moneda_two = monedaEl_two.value;
   if (!isNaN(cantidadEl_one)) {
     if (cantidadEl_one <= saldo) {
-      const temp = monedaEl_one.value;
-      monedaEl_one.value = monedaEl_two.value;
-      monedaEl_two.value = temp;
-      fetch(`https://api.exchangerate-api.com/v4/latest/${moneda_one}`)
+      // const temp = monedaEl_one;
+      // monedaEl_one = monedaEl_two;
+      // monedaEl_two = temp;
+      fetch(`https://api.exchangerate-api.com/v4/latest/${monedaEl_one}`)
         .then(res => res.json())
         .then(data => {
-            const taza = data.rates[moneda_two];
-
-            // Modificar el texto del elemento con id cambioEl
-            cambioEl.innerText = `1 ${moneda_one} = ${taza} ${moneda_two}`;
-
-            cantidadEl_two.value = (cantidadEl_one.value * taza).toFixed(2);
+            const taza = data.rates[monedaEl_two];
+            cantidadEl_two = (cantidadEl_one * taza).toFixed(2);
+            console.log(cantidadEl_two);
+            req.body.cantidad2 = cantidadEl_two;
         });
     } else {
       req.session.error = "No dispones de ese dinero";
