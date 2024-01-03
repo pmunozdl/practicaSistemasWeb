@@ -28,6 +28,7 @@ router.post('/', async function(req, res, next){
         const nuevaTransacion = await newTransaccion(username, receptor, cantidad);
         user.update({saldo : saldo - cantidad}, {where: { user: user}});
         receptor2.update({saldo: saldo2 + cantidad}, {where: {username: receptor}});
+        // res.json({bien:true}); poner como en el de conversor. 
       } else {
         req.session.error = "El valor introducido no es un número";
         res.redirect("/bizum");

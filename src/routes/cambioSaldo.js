@@ -3,11 +3,14 @@ var router = express.Router();
 const { models } = require('../sequelize');
 
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-
+// let cantidadEl_two;
+// console.log(cantidadEl_two+"aaaa");
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   let usuarios = await models.user.findAll({where: {rol:"user"}});
-  res.render('cambioSaldo', { title: 'Cambio Saldo', usuarios, user: req.session.user });
+  // let cantidadEl_two;
+  // console.log(cantidadEl_two);
+  res.render('cambioSaldo', { title: 'Cambio Saldo', usuarios, user: req.session.user,cantidadEl_two:0 });
 });
 router.post('/', async function(req, res, next){
   saldo = req.session.user.saldo;
@@ -25,8 +28,8 @@ router.post('/', async function(req, res, next){
             const taza = data.rates[monedaEl_two];
             cantidadEl_two = (cantidadEl_one * taza).toFixed(2);
             console.log(cantidadEl_two);
-            res.write(cantidadEl_two);
-        });
+            res.render('cambioSaldo', { title: 'Cambio Saldo', user: req.session.user,cantidadEl_two });
+          });
     } else {
       req.session.error = "No dispones de ese dinero";
       res.redirect("/cambioSaldo");
