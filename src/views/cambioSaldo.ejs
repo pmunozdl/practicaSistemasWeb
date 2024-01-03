@@ -1,30 +1,44 @@
 <%- include("header", {}) %>
 <div id="container">
     <div class="contenidoConversor" id = "contenidoConversor">
-        <form action="#">
+        <form action="/cambioSaldo" method="post">
             <div class="amount">
                 <p>Introduce cantidad</p>
-                <input type="text" value="1"/>
+                <input type="text" value="1" name="cantidad1"/>
             </div>
             <div class="drop-list">
                 <div class="from">
                     <p>De:</p>
                     <div class="select-box">
-                        <img src="https://flagcdn.com/48x36/us.png" alt="flag">
-                        <select></select>
+                        <select name="moneda1">
+                            <option value="USD" selected> USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="JPY">JPY</option>
+                            <option value="INR">INR</option>
+                            <option value="GBP">GBP</option>
+                        </select>
                     </div>
                 </div>
                 <div class="icon"> <i class="fas fa-exchange-alt"></i></div>
                 <div class="to">
                     <p>A:</p>
                     <div class="select-box">
-                        <img src="https://flagcdn.com/48x36/es.png" alt="flag">
-                        <select></select>
+                        <select name="moneda2">
+                            <option value="USD" > USD</option>
+                            <option value="EUR" selected>EUR</option>
+                            <option value="JPY">JPY</option>
+                            <option value="INR">INR</option>
+                            <option value="GBP">GBP</option>
+                        </select>
                     </div>
                 </div>
             </div>
             <div class="exchange-rate">Obten el resultado</div>
-            <button type="submit">Convertir</button>
+            <button type="submit" name="cambio">Convertir</button>
+            <div class="amount">
+                <p>Resultado</p>
+                <input type="text" name="cantidad2"/>
+            </div>
         </form>
     </div>
 <%- include("footer", {}) %>

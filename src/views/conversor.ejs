@@ -1,31 +1,40 @@
 <%- include("header", {}) %>
     <div class = "contenidoConversor">
         <header> Conversor de divisas </header>
-        <form action="#">
+        <form>
             <div class="amount">
                 <p>Introduce cantidad</p>
-                <input type="text" value="1"/>
+                <input type="text" value="1" id="cantidad-uno" required/>
             </div>
             <div class="drop-list">
                 <div class="from">
                     <p>De:</p>
                     <div class="select-box">
-                        <img src="https://flagcdn.com/48x36/us.png" alt="flag">
-                        <select></select>
+                        <select id="moneda-uno">
+                            <option value="USD" selected> USD</option>
+                            <option value="EUR">EUR</option>
+                        </select>
                     </div>
                 </div>
                 <div class="icon"> <i class="fas fa-exchange-alt"></i></div>
                 <div class="to">
                     <p>A:</p>
                     <div class="select-box">
-                        <img src="https://flagcdn.com/48x36/es.png" alt="flag">
-                        <select></select>
+                        <select id="moneda-dos">
+                            <option value="EUR" selected>EUR</option>
+                            <option value="USD">USD</option>
+                        </select>
                     </div>
                 </div>
             </div>
             <div class="exchange-rate">Obten el resultado</div>
-            <button type="submit">Convertir</button>
+            <button type="submit" id="cambio">Convertir</button>
+            <div class="amount">
+                <p>Resultado</p>
+                <input type="text" id="cantidad-dos"/>
+            </div>
         </form>
+        
     </div>
 </body>
 </html>
