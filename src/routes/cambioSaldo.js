@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
+const { models } = require('../sequelize');
+
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('cambioSaldo', { title: 'Cambio Saldo', user: req.session.user });
+router.get('/', async function(req, res, next) {
+  let usuarios = await models.user.findAll({where: {rol:"user"}});
+  res.render('cambioSaldo', { title: 'Cambio Saldo', usuarios, user: req.session.user });
 });
 router.post('/', async function(req, res, next){
   saldo = req.session.user.saldo;

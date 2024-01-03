@@ -726,7 +726,7 @@ body #inicioUsuario {
     margin-right: 8%;
     justify-content: center;
     margin-left: 10%;
-    margin-top: 12%;
+    margin-top: 20%;
 }
 
 #inicioUsuarioRegistrado .acciones {
@@ -849,7 +849,7 @@ body #inicioUsuario {
 }
 
 #sidebarDerechaInicio {
-    margin-top: 5%;
+    margin-top: 10%;
     margin-right: -58%;
     margin-left: 10%;
     width: 40%;
@@ -1047,6 +1047,7 @@ body #inicioUsuario {
     /* width: 80%; */
     margin-right: 175px;
     margin-left: 25%;
+    margin-top: 20%;
 } 
 
 

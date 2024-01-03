@@ -6,8 +6,9 @@ const { Op } = Sequelize;
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   let username = req.session.user.username;
+  let usuarios = await models.user.findAll({where: {rol:"user"}});
   let transacciones = await models.transaccion.findAll({where: {Confirmado:true,[Op.or]:[{emisor:username}, {receptor:username}]}});
-  res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',transacciones,user: req.session.user });
+  res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,transacciones,user: req.session.user });
 });
 
 router.post('/', async function(req, res, next){
