@@ -25,7 +25,7 @@ router.post('/', async function(req, res, next){
             const taza = data.rates[monedaEl_two];
             cantidadEl_two = (cantidadEl_one * taza).toFixed(2);
             console.log(cantidadEl_two);
-            req.body.cantidad2 = cantidadEl_two;
+            res.write(cantidadEl_two);
         });
     } else {
       req.session.error = "No dispones de ese dinero";
