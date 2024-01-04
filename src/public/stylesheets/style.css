@@ -707,6 +707,12 @@ body #inicioUsuario {
     background: #675AFE;
 }
 
+#resultadoConversion{
+    background: white;
+    text-align: center;
+    height: 50px;
+    align-items: center;
+}
 
 /*Usuario registrado*/
 
