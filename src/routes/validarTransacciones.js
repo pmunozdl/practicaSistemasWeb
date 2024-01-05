@@ -13,12 +13,18 @@ router.get('/', async function(req, res, next) {
 
 router.post('/deleteTransaccion',  async function(req, res, next){ // método para borrar usuarios. Puede haber varios post en una clase
   const username = req.body.username;
+  let receptor = await models.transaccion.findOne({where: {id:username}});
+  let emisor = receptor.dataValues.emisor;
+  let cantidad = receptor.dataValues.cantidad;
+  let e = await models.user.findOne({where: {username:emisor}});
+  let saldo = e.dataValues.saldo;
   if(req.session.user.rol == "admin") { // si el rol de usuario es igual a admin, puede acceder a la pestaña. 
       await models.transaccion.destroy({
         where: {
           id: username
         },
       });; // destroy para sequelize. En arrays basta con delete database.users.data[username]; 
+      e.update({saldo: saldo + cantidad}, {where: {username: emisor}});
       res.redirect("/validarTransacciones");
   }else{
       req.session.error = "Unauthorized access"; // si no es admin, no puede.
