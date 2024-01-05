@@ -11,7 +11,16 @@ Dentro de la aplicación podrá haber tres tipos de usuarios:
     -Administrador: Solo un usuario, creado por defecto. No es un usuario convencional, y tiene acceso a un apartado restringido de la aplicación donde puede supervisar las transacciones realizadas y los usuarios que la componen. 
 Para realizar este proyecto se ha empleado el framework de javascript node.js, en combinación con express. En cuanto a base de datos, se ha elegido un modelo relacional en sqlite mediante sequelize. 
 
-Para desplegar la aplicación, debemos ejecutar el siguiente comando: 
+
+
+Para desplegar la aplicación, en primer lugar, debemos clonar el repositorio. Una vez realizado, debemos movernos a la carpeta /src. Bajo este directorio, debemos instalar las dependencias, que lo realizamos con este comando.
+
+```
+npm install 
+```
+
+Una vez instaladas, procedemos a iniciar el servidor. Para ello, debemos ejecutar el siguiente comando.
+
 ```
 npm start 
 ```
