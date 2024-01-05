@@ -1056,4 +1056,10 @@ body #inicioUsuario {
     margin-top: 20%;
 } 
 
-
+.oferta {
+    color: black;
+    background-color: white;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: -5%;
+}

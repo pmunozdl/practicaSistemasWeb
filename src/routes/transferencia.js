@@ -27,7 +27,7 @@ router.post('/', async function(req, res, next){
         const nuevaTransacion = await newTransaccion(username, receptor, cantidad);
         user.update({saldo : saldo - cantidad}, {where: { user: user}});
         let mensaje = "Operación realizada con éxito"
-        res.render('bizum', { title: 'Transferencia',  user: req.session.user, mensaje});
+        res.render('transferencia', { title: 'Transferencia',  user: req.session.user, mensaje});
         // receptor2.update({saldo: saldo2 + cantidad}, {where: {username: receptor}});
       } else {
         req.session.error = "El valor introducido no es un número";
