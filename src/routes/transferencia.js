@@ -4,8 +4,8 @@ const { models } = require('../sequelize');
 const sequelize = require('../sequelize');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  
-  res.render('transferencia', { title: 'Transferencia', user: req.session.user });
+  let mensaje;
+  res.render('transferencia', { title: 'Transferencia', user: req.session.user, mensaje});
 });
 
 router.post('/', async function(req, res, next){
@@ -26,6 +26,8 @@ router.post('/', async function(req, res, next){
       if (!isNaN(cantidad)) {
         const nuevaTransacion = await newTransaccion(username, receptor, cantidad);
         user.update({saldo : saldo - cantidad}, {where: { user: user}});
+        let mensaje = "Operación realizada con éxito"
+        res.render('bizum', { title: 'Transferencia',  user: req.session.user, mensaje});
         // receptor2.update({saldo: saldo2 + cantidad}, {where: {username: receptor}});
       } else {
         req.session.error = "El valor introducido no es un número";

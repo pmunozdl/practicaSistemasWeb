@@ -6,7 +6,8 @@ const sequelize = require('../sequelize');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('bizum', { title: 'Bizum',  user: req.session.user});
+  let mensaje;
+  res.render('bizum', { title: 'Bizum',  user: req.session.user, mensaje});
 });
 
 router.post('/', async function(req, res, next){
@@ -28,7 +29,8 @@ router.post('/', async function(req, res, next){
         const nuevaTransacion = await newTransaccion(username, receptor, cantidad);
         user.update({saldo : saldo - cantidad}, {where: { user: user}});
         receptor2.update({saldo: saldo2 + cantidad}, {where: {username: receptor}});
-        // res.json({bien:true}); poner como en el de conversor. 
+        let mensaje = "Operación realizada con éxito"
+        res.render('bizum', { title: 'Bizum',  user: req.session.user, mensaje});
       } else {
         req.session.error = "El valor introducido no es un número";
         res.redirect("/bizum");
