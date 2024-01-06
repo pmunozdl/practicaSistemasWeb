@@ -6,7 +6,8 @@ const { models } = require('../sequelize');
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   let usuarios = await models.user.findAll({where: {rol:"user"}});
-  res.render('panelControl', { title: 'Panel de Control Administrador',usuarios,user: req.session.user });
+  let mensaje;
+  res.render('panelControl', { title: 'Panel de Control Administrador',usuarios,mensaje,user: req.session.user });
 });
 
 router.post('/deleteUser',  async function(req, res, next){ // método para borrar usuarios. Puede haber varios post en una clase
@@ -17,10 +18,10 @@ router.post('/deleteUser',  async function(req, res, next){ // método para borr
           username: username
         },
       });; // destroy para sequelize. En arrays basta con delete database.users.data[username]; 
-      res.redirect("/interfazAdmin");
+      res.redirect("/panelControl");
   }else{
       req.session.error = "Unauthorized access"; // si no es admin, no puede.
-      res.redirect("/");
+      res.redirect("/panelControl");
   }
 });
 
