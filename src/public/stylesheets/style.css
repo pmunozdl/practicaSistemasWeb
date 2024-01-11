@@ -1063,3 +1063,8 @@ body #inicioUsuario {
     text-align: center;
     margin-top: -5%;
 }
+
+.Error{
+    background-color: white;
+    color: black;
+}

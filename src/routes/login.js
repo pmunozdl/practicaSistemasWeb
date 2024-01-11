@@ -5,7 +5,8 @@ const bcrypt = require("bcrypt");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Login',  user: req.session.user});
+  let mensaje;
+  res.render('login', { title: 'Login',mensaje, user: req.session.user});
 });
 
 router.post('/', async function(req, res, next){
@@ -25,13 +26,13 @@ router.post('/', async function(req, res, next){
                 res.redirect("/inicioUsuarioRegistrado");
               }
           } else {
-              req.session.error = "Incorrect username or password";
-              res.redirect("/login");
+              mensaje = "Incorrect username or password";
+              res.render('login', { title: 'Login',mensaje, user: req.session.user});
           }
       });
   } else {
-      req.session.error = "Incorrect username or password";
-      res.redirect("/login");
+      mensaje = "No existe ese usuario";
+      res.render('login', { title: 'Login',mensaje, user: req.session.user});
   }
 });
 

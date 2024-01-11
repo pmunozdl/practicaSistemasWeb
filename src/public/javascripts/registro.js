@@ -18,12 +18,12 @@ function passwordConfirmation() {
     } else {
         
         if (password == confirmPassword) {
-            document.getElementById('Error').innerHTML = "<h3>La contrasena es valida</h3>"
+            document.getElementById('Error').innerHTML = "<h3 id= alertRegistro>La contrasena es valida</h3>"
             return true;
             
             //alert("Valid");
         } else {
-            document.getElementById('Error').innerHTML = "<h3>No coinciden las contraseñas.</h3>"
+            document.getElementById('Error').innerHTML = "<h3 id = alertRegistro>No coinciden las contraseñas.</h3>"
             return false;
         }
 

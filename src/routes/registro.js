@@ -7,7 +7,8 @@ const { Sequelize, Model } = require('sequelize'); //cargo la librería sequeliz
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('registro', { title: 'Registro', user: req.session.user }); // con este user luego lo llamo en el header. Declarar en todas las rutas que lleven header.
+  let mensaje;
+  res.render('registro', { title: 'Registro',mensaje, user: req.session.user }); // con este user luego lo llamo en el header. Declarar en todas las rutas que lleven header.
 });
 
 router.post('/', async function(req, res, next){
@@ -29,23 +30,24 @@ router.post('/', async function(req, res, next){
         req.session.message = "Welcome!"
         res.redirect("/inicioUsuarioRegistrado");
         } else {
-          req.session.error = "The phone number must be of the format 6ddddddd.";
-          res.redirect("/registro");
+          let mensaje = "The phone number must be of the format 6ddddddd.";
+          res.render('registro', { title: 'Registro',mensaje, user: req.session.user });
+          //res.redirect("/registro");
         }
       } else{
-          req.session.error = "La contraseña no es válida. Introduzca otra";
-          // alert("La contraseña no es válida");
-          res.redirect("/registro");
+          let mensaje = "La contraseña no es válida. Introduzca otra";
+          res.render('registro', { title: 'Registro',mensaje, user: req.session.user });
+          //res.redirect("/registro");
       }
     }else{
-      req.session.error = "Ya existe ese número de teléfono";
-      // alert("Ya existe ese usuario");
-      res.redirect("/registro");
+      let mensaje = "Ya existe ese número de teléfono";
+      res.render('registro', { title: 'Registro',mensaje, user: req.session.user });
+      //res.redirect("/registro");
     }
   } else {
-    req.session.error = "Ya existe ese username";
-    // alert("Ya existe ese usuario");
-    res.redirect("/registro");
+    let mensaje= "Ya existe ese username";
+    res.render('registro', { title: 'Registro',mensaje, user: req.session.user });
+    //res.redirect("/registro");
   }
 });
 
