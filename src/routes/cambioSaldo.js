@@ -8,16 +8,20 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   let usuarios = await models.user.findAll({where: {rol:"user"}});
+  username = req.session.user.username;
+  const user = await models.user.findOne({ where: { username } }); 
   // let cantidadEl_two;
   // console.log(cantidadEl_two);
   let mensaje;
-  res.render('cambioSaldo', { title: 'Cambio Saldo', usuarios,mensaje, user: req.session.user,cantidadEl_two:0 });
+  res.render('cambioSaldo', { title: 'Cambio Saldo', usuarios,mensaje, user,cantidadEl_two:0 });
 });
 router.post('/', async function(req, res, next){
-  saldo = req.session.user.saldo;
+  username = req.session.user.username;
   const monedaEl_one = req.body.moneda1;
   const monedaEl_two = req.body.moneda2;
   const cantidadEl_one = req.body.cantidad1;
+  const user = await models.user.findOne({ where: { username } }); 
+  const saldo = user.dataValues.saldo;
   if (!isNaN(cantidadEl_one)) {
     if (cantidadEl_one <= saldo) {
       // const temp = monedaEl_one;
@@ -29,17 +33,17 @@ router.post('/', async function(req, res, next){
             const taza = data.rates[monedaEl_two];
             cantidadEl_two = (cantidadEl_one * taza).toFixed(2);
             let mensaje;
-            res.render('cambioSaldo', { title: 'Cambio Saldo',mensaje,user: req.session.user,cantidadEl_two });
+            res.render('cambioSaldo', { title: 'Cambio Saldo',mensaje,user,cantidadEl_two });
           });
     } else {
       let mensaje = "No dispones de ese dinero";
       let cantidadEl_two;
-      res.render('cambioSaldo', { title: 'Cambio Saldo',mensaje,user: req.session.user,cantidadEl_two });
+      res.render('cambioSaldo', { title: 'Cambio Saldo',mensaje,user,cantidadEl_two });
       }
   } else {
     let mensaje = "La cantidad introducida no es un número";
     let cantidadEl_two;
-    res.render('cambioSaldo', { title: 'Cambio Saldo',mensaje,user: req.session.user,cantidadEl_two });
+    res.render('cambioSaldo', { title: 'Cambio Saldo',mensaje,user,cantidadEl_two });
   }
   } );
 

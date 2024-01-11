@@ -5,9 +5,11 @@ const { models } = require('../sequelize');
 const sequelize = require('../sequelize');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', async function(req, res, next) {
   let mensaje;
-  res.render('bizum', { title: 'Bizum',  user: req.session.user, mensaje});
+  let username = req.session.user.username;
+  let user = await models.user.findOne({where: {username: username}});
+  res.render('bizum', { title: 'Bizum',  user, mensaje});
 });
 
 router.post('/', async function(req, res, next){
@@ -30,21 +32,21 @@ router.post('/', async function(req, res, next){
         user.update({saldo : saldo - cantidad}, {where: { user: user}});
         receptor2.update({saldo: saldo2 + cantidad}, {where: {username: receptor}});
         let mensaje = "Operación realizada con éxito";
-        res.render('bizum', { title: 'Bizum',  user: req.session.user, mensaje});
+        res.render('bizum', { title: 'Bizum',  user, mensaje});
       } else {
         req.session.error="No tiene suficiente dinero para realizar la operación.";
         let mensaje = "No tienes suficiente dinero";
-        res.render('bizum', { title: 'Bizum',  user: req.session.user, mensaje});
+        res.render('bizum', { title: 'Bizum',  user, mensaje});
       } 
     }else {
       req.session.error = "El valor introducido no es un número";
       let mensaje = "El valor introducido no es un número, o supera los 50$";
-      res.render('bizum', { title: 'Bizum',  user: req.session.user, mensaje});
+      res.render('bizum', { title: 'Bizum',  user, mensaje});
     } 
   } else if(!receptor2){
     req.session.error = "No existe ese nombre";
     let mensaje = "El usuario introducido no existe";
-    res.render('bizum', { title: 'Bizum',  user: req.session.user, mensaje});
+    res.render('bizum', { title: 'Bizum',  user, mensaje});
   }
 });
 

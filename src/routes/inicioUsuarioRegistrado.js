@@ -9,7 +9,8 @@ router.get('/', async function(req, res, next) {
   let usuarios = await models.user.findAll({where: {rol:"user"}});
   let transacciones = await models.transaccion.findAll({where: {Confirmado:true,[Op.or]:[{emisor:username}, {receptor:username}]}});
   let mensaje;
-  res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,mensaje, transacciones,user: req.session.user });
+  const user = await models.user.findOne({ where: { username } });
+  res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,mensaje, transacciones,user});
 });
 
 router.post('/', async function(req, res, next){
@@ -32,7 +33,7 @@ router.post('/', async function(req, res, next){
       }else{
         if (cantidad > saldo) {
           let mensaje = "No tienes suficiente dinero";
-          res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,mensaje, transacciones,user: req.session.user});
+          res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,mensaje, transacciones,user});
 
         } else {
         user.update({saldo : saldo - cantidad}, {where: { user: user}});
@@ -42,11 +43,11 @@ router.post('/', async function(req, res, next){
       }
     } else {
       let mensaje = "El valor introducido no es un número";
-      res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,mensaje, transacciones,user: req.session.user });
+      res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,mensaje, transacciones,user});
     }
   } else {
     let mensaje = "No existe ese nombre";
-    res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,mensaje, transacciones,user: req.session.user });
+    res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,mensaje, transacciones,user});
   }
 });
 
