@@ -8,7 +8,8 @@ router.get('/', async function(req, res, next) {
   let username = req.session.user.username;
   let usuarios = await models.user.findAll({where: {rol:"user"}});
   let transacciones = await models.transaccion.findAll({where: {Confirmado:true,[Op.or]:[{emisor:username}, {receptor:username}]}});
-  res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,transacciones,user: req.session.user });
+  let mensaje;
+  res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,mensaje, transacciones,user: req.session.user });
 });
 
 router.post('/', async function(req, res, next){
@@ -19,27 +20,33 @@ router.post('/', async function(req, res, next){
   
   let cantidad = Number(cifra);
   if (user) {
+    let username = req.session.user.username;
+    let usuarios = await models.user.findAll({where: {rol:"user"}});
+    let transacciones = await models.transaccion.findAll({where: {Confirmado:true,[Op.or]:[{emisor:username}, {receptor:username}]}});
     let saldo = user.dataValues.saldo;
     if (!isNaN(cantidad)) {
       if (operacion === "añadir") {
         user.update({saldo : saldo + cantidad}, {where: { user: user}});
-        res.redirect("/inicioUsuarioRegistrado");
+        let mensaje = "Dinero añadido correctamente"
+        res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,mensaje, transacciones,user });
       }else{
         if (cantidad > saldo) {
-          req.session.error = "No tienes suficiente dinero";
-          res.redirect("/inicioUsuarioRegistrado");
+          let mensaje = "No tienes suficiente dinero";
+          res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,mensaje, transacciones,user: req.session.user});
+
         } else {
         user.update({saldo : saldo - cantidad}, {where: { user: user}});
-        res.redirect("/inicioUsuarioRegistrado");
+        let mensaje = "Dinero retirado correctamente";
+        res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,mensaje, transacciones,user });
         }
       }
     } else {
-      req.session.error = "El valor introducido no es un número";
-      res.redirect("/inicioUsuarioRegistrado");
+      let mensaje = "El valor introducido no es un número";
+      res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,mensaje, transacciones,user: req.session.user });
     }
   } else {
-    req.session.error = "No existe ese nombre";
-    res.redirect("/inicioUsuarioRegistrado");
+    let mensaje = "No existe ese nombre";
+    res.render('inicioUsuarioRegistrado', { title: 'Bienvenido Usuario Registrado',usuarios,mensaje, transacciones,user: req.session.user });
   }
 });
 
